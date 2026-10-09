@@ -1214,9 +1214,99 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 .tira--fotos a:hover img { transform: scale(1.04); }
 .t-oscuro .seccion-cabeza { border-top-color: var(--linea); }
 
+/* ══════════════════════════════════════════════
+   PORTFOLIO + FICHA DE EVENTO (foto grande, nombre, año, pantonera)
+══════════════════════════════════════════════ */
+.portfolio-pagina { padding-top: 70px; }
+.portfolio-pagina .filtros { padding: 0; }
+.trabajo.oculto { display: none; }
+
+.ev-portada {
+  display: grid; grid-template-columns: 44% 1fr;
+  min-height: 100vh; padding-top: 70px;
+}
+.ev-foto { position: relative; overflow: hidden; background: #ddd; }
+.ev-foto img, .ev-foto video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ev-texto {
+  display: flex; flex-direction: column;
+  padding: clamp(40px, 6vw, 110px) var(--pad) clamp(32px, 4vw, 56px) clamp(32px, 7vw, 130px);
+}
+.ev-texto .etiqueta { margin-bottom: clamp(16px, 2vw, 28px); }
+.ev-titulo {
+  font-weight: 400; font-size: clamp(48px, 6.4vw, 112px);
+  line-height: 1; letter-spacing: -0.015em;
+}
+.ev-titulo.largo { font-size: clamp(42px, 4.9vw, 84px); line-height: 1.02; text-wrap: balance; }
+.ev-anio {
+  font-weight: 300; font-size: clamp(28px, 3vw, 52px); line-height: 1.1;
+  color: var(--gris); margin-top: 0.15em;
+}
+.ev-abajo {
+  display: flex; flex-direction: column-reverse; gap: clamp(36px, 4vw, 56px);
+  margin-top: auto; padding-top: clamp(36px, 5vw, 72px);
+}
+.ev-desc { max-width: 44ch; }
+.ev-volver { margin-top: clamp(32px, 4vw, 56px); align-self: flex-start; }
+
+/* Pantonera escalonada, como en las propuestas */
+.pantonera { display: flex; gap: clamp(10px, 1.4vw, 22px); align-items: flex-start; }
+.pantone {
+  width: clamp(76px, 6.6vw, 110px); background: #fff;
+  padding: 4px 4px 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.14);
+  display: flex; flex-direction: column;
+}
+.pantone:nth-child(2) { margin-top: clamp(28px, 3vw, 54px); }
+.pantone:nth-child(3) { margin-top: clamp(56px, 6vw, 108px); }
+.pantone-color { display: block; aspect-ratio: 1; width: 100%; }
+.pantone-nombre {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  margin-top: 8px; line-height: 1.2; color: var(--negro);
+}
+.pantone-hex { font-size: 9px; letter-spacing: 0.06em; color: var(--gris); margin-top: 2px; }
+
+.ev-fotos-cab {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: clamp(48px, 6vw, 96px) var(--pad) clamp(20px, 2.5vw, 32px);
+}
+.ev-fotos-cab .etiqueta { margin: 0; }
+.ev-num { font-size: clamp(32px, 3.4vw, 56px); font-weight: 300; line-height: 1; }
+
+@media (max-width: 900px) {
+  .ev-portada { grid-template-columns: 1fr; min-height: 0; }
+  .ev-foto { aspect-ratio: 4 / 5; }
+  .ev-texto { padding: 36px 20px 40px; }
+  .ev-abajo { padding-top: 36px; }
+  .ev-fotos-cab { padding-left: 20px; padding-right: 20px; }
+}
+@media (max-width: 420px) {
+  .pantone { width: 68px; }
+}
+
+/* Muestra de textura en la pantonera */
+.pantone-red { background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg stroke='%23CB2613' stroke-width='1.2' fill='none'%3E%3Cpath d='M8 14 L46 30 L82 10 M46 30 L36 64 L74 56 L82 10 M36 64 L10 82 M74 56 L94 88 M36 64 L58 94 M8 14 L10 82 M74 56 L46 30'/%3E%3C/g%3E%3Cg fill='%23CB2613'%3E%3Ccircle cx='8' cy='14' r='2.6'/%3E%3Ccircle cx='46' cy='30' r='2.6'/%3E%3Ccircle cx='82' cy='10' r='2.6'/%3E%3Ccircle cx='36' cy='64' r='2.6'/%3E%3Ccircle cx='74' cy='56' r='2.6'/%3E%3Ccircle cx='10' cy='82' r='2.6'/%3E%3Ccircle cx='94' cy='88' r='2.6'/%3E%3Ccircle cx='58' cy='94' r='2.6'/%3E%3C/g%3E%3C/svg%3E") center / 100% 100% no-repeat; outline: 1px solid rgba(0,0,0,0.06); }
+.pantone-color { box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); }
+.mosaico .foto--video { cursor: default; }
+.mosaico .foto--video video { width: 100%; height: auto; display: block; }
+
+/* Casamientos todo en beige: los bloques verdes pasan a beige (el puntito sigue verde) */
+.t-beige .t-verde, .t-beige .banda.t-verde, .t-beige .hero-sub.t-verde, .t-beige .ct-izq {
+  background: var(--beige); color: var(--negro); --acento: var(--verde); border-color: var(--linea);
+}
+.t-beige .t-verde .cuerpo, .t-beige .ct-izq .ct-sub { color: var(--tinta); opacity: 1; }
+.t-beige .t-verde .ovalo, .t-beige .banda.t-verde .ovalo { --ovalo: var(--ocre); }
+.t-beige .t-verde .sublineas, .t-beige .t-verde .sublineas li, .t-beige .t-verde .cinta,
+.t-beige .t-verde .servicio-card, .t-beige .t-verde .servicios-grid { border-color: var(--linea); }
+.t-beige .ct-izq { border-right: 1px solid var(--linea); border-top: 1px solid var(--linea); }
+.t-beige .t-verde .btn, .t-beige .ct-izq .btn { background: var(--negro); color: var(--beige); border-color: var(--negro); }
+.t-beige .t-verde .btn:hover, .t-beige .ct-izq .btn:hover { background: transparent; color: var(--negro); border-color: var(--negro); }
+
+/* Tarjetas del portfolio con video de portada */
+.trabajo video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.9s var(--ease), opacity 0.5s; }
+.trabajo:hover video { transform: scale(1.04); opacity: 0.82; }
+
 </style>
 </head>
-<body class="t-social">
+<body class="t-social t-oscuro">
 
 <header class="nav solido fijo">
   <a href="index.html" class="nav-logo" aria-label="Classic Twist — inicio">
@@ -1228,7 +1318,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
       <li><a href="eventos-de-marca.html">Eventos de marca</a></li>
       <li><a href="casamientos.html">Casamientos</a></li>
       <li><a href="celebraciones.html" class="activo">Celebraciones</a></li>
-      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="equipo.html">Equipo</a></li>
       <li><a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="nav-cta">Contacto</a></li>
     </ul>
@@ -1241,7 +1331,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <a href="eventos-de-marca.html">Eventos de marca</a>
   <a href="casamientos.html">Casamientos</a>
   <a href="celebraciones.html">Celebraciones</a>
-  <a href="galeria.html">Galería</a>
+  <a href="portfolio.html">Portfolio</a>
   <a href="equipo.html">Nuestro equipo</a>
   <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn">Contacto</a>
   <p class="firma">Dirección creativa aplicada al líquido</p>
@@ -1275,7 +1365,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <div class="partido-media pasafotos" data-intervalo="2800">
     <img src="galeria/casamiento/portada.jpg" alt="Invitadas brindando en una celebración" loading="lazy">
     <img src="assets/img/celebraciones/DSC00991.jpg" alt="Bartender de Classic Twist de noche" loading="lazy">
-    <img src="galeria/fixed/portada.jpg" alt="Trago servido en una celebración privada" loading="lazy">
+    <img src="galeria/boda/03.jpg" alt="Trago servido en una celebración privada" loading="lazy">
   </div>
 </section>
 
@@ -1350,7 +1440,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 <div class="galeria-grid" data-linea="social" data-cantidad="6"></div>
 <div class="galeria-pie">
   <span class="firma">Dirección creativa aplicada al líquido</span>
-  <a href="galeria.html" class="link-flecha">Ver toda la galería <span aria-hidden="true">→</span></a>
+  <a href="portfolio.html" class="link-flecha">Ver todo el portfolio <span aria-hidden="true">→</span></a>
 </div>
 
 <section class="conoce" aria-label="Conocé más">
@@ -1361,7 +1451,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     </div>
     <nav class="conoce-links aparece d2" aria-label="Más de Classic Twist">
       <a href="index.html">Inicio <span aria-hidden="true">→</span></a>
-      <a href="galeria.html">Galería <span aria-hidden="true">→</span></a>
+      <a href="portfolio.html">Portfolio <span aria-hidden="true">→</span></a>
       <a href="equipo.html">Equipo <span aria-hidden="true">→</span></a>
     </nav>
   </div>
@@ -1419,20 +1509,53 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
    CLASSIC TWIST — JS compartido
 ══════════════════════════════════════════════ */
 
-/* Trabajos de la galería (se usan en home, galería y evento) */
+/* Trabajos del portfolio (se usan en portfolio, evento y sublandings).
+   desc: descripción propia de cada evento (si está vacía se usa la genérica de su categoría).
+   portada: número de la foto principal (si no está, usa portada.jpg).
+   paleta: 3 colores por evento (sacados de las fotos o de la marca);
+   video: video de portada en videos/ (opcional); videos: otros videos que se suman a la galería.
+   un tercer valor 'red' muestra la textura de red en vez de color liso. */
 const TRABAJOS = [
-  { id: 'hym2026',    nombre: 'H&M 2026',       cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 18 },
-  { id: 'vichy2026',  nombre: 'Vichy 2026',     cat: 'Activación de marca',     linea: 'empresarial', fotos: 9 },
-  { id: 'vichy',      nombre: 'Vichy',          cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 9 },
-  { id: 'hym',        nombre: 'H&M',            cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 6 },
-  { id: 'samsung',    nombre: 'Samsung',        cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 5 },
-  { id: 'loreal',     nombre: "L'Oréal",        cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 6 },
-  { id: 'roche',      nombre: 'La Roche-Posay', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 1 },
-  { id: 'ibm',        nombre: 'IBM',            cat: 'Evento corporativo',      linea: 'empresarial', fotos: 4 },
-  { id: 'exat',       nombre: 'Exat',           cat: 'Evento corporativo',      linea: 'empresarial', fotos: 5 },
-  { id: 'fixed',      nombre: 'Fixed',          cat: 'Evento privado',          linea: 'social',      fotos: 7 },
-  { id: 'boda',       nombre: 'Casamiento',     cat: 'Casamiento',              linea: 'social',      fotos: 13 },
+  { id: 'hym2026', nombre: "Stella McCartney × H&M", anio: '2026', cat: 'Lanzamiento de colección', linea: 'empresarial', fotos: 18, portada: '07',
+    desc: 'Stella McCartney vuelve a H&M con una colección que cuida el medio ambiente, en tonos tierra. Diseñamos dos cócteles inspirados en su colección, servidos en una estación.',
+    paleta: [['#5F6A3F', "Verde"], ['#E50010', "Rojo H&M"], ['#D9C7A3', "Beige"]] },
+  { id: 'vichy2026', nombre: "Vichy", anio: '2026', cat: 'Activación de marca', linea: 'empresarial', fotos: 9, portada: '08',
+    desc: 'La nueva era de tu piel: un sistema en red donde cada decisión cuenta. Llevamos la red a cuatro tragos de autor y a un ritual interactivo donde aparece la V de Vichy.',
+    paleta: [['#CB2613', "Rojo Vichy"], ['#FFFFFF', "Red", 'red'], ['#FFFFFF', "Blanco"]] },
+  { id: 'toyota2026', nombre: "Toyota bZ4X", anio: '2026', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 7, video: 'toyota',
+    desc: 'Lanzamiento del nuevo Toyota bZ4X en Uruguay. Diseñamos una barra en clave azul, con tragos de autor y hielo cristalino, pensada para acompañar la presentación del auto.',
+    paleta: [['#0285CD', "Azul eléctrico"], ['#020F4F', "Azul noche"], ['#C9CED4', "Plateado"]] },
+  { id: 'fixed', nombre: "Fixed", anio: '2025', cat: 'After office', linea: 'empresarial', fotos: 8,
+    desc: 'After office para inaugurar las nuevas oficinas de Fixed. Una barra pensada desde la tecnología, la innovación, la simplicidad y la rapidez, en los colores de la marca.',
+    paleta: [['#C9CED4', "Plateado"], ['#011955', "Azul Fixed"], ['#019F96', "Verde Fixed"]] },
+  { id: 'exat', nombre: "Exat", anio: '2025', cat: 'Fiesta de fin de año', linea: 'empresarial', fotos: 10,
+    desc: 'Fiesta de fin de año de Exat. Una barra de tragos de autor en los colores de la marca, con hielo cristalino grabado con su logo, para cerrar el año con todo el equipo.',
+    paleta: [['#1A3D59', "Azul Exat"], ['#ABBA73', "Verde Exat"]] },
+  { id: 'loreal', nombre: "Lancôme", anio: '2025', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 10,
+    video: 'lancome-0', videos: ['lancome-1', 'lancome-2', 'lancome-3'],
+    desc: 'Para Lancôme armamos una barra sin alcohol de mocktails, donde la coctelería y la estética se encuentran en clave rosa, con una presentación pensada desde la marca.',
+    paleta: [['#EBCBCB', "Rosa claro"], ['#DEA09C', "Rosa"], ['#B7676A', "Rosa viejo"]] },
+  { id: 'vichy', nombre: "Vichy", anio: '2025', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 9,
+    paleta: [['#B17D95', "Malva"], ['#7C1D26', "Rojo"], ['#2E1B1D', "Bordó"]] },
+  { id: 'hym', nombre: "H&M", anio: '2025', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 6,
+    paleta: [['#A91D29', "Rojo"], ['#7C5954', "Rosa viejo"], ['#050609', "Negro"]] },
+  { id: 'roche', nombre: "La Roche-Posay", anio: '2025', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 1,
+    paleta: [['#6B7DAA', "Azul"], ['#875F61', "Rosa viejo"], ['#25315B', "Azul profundo"]] },
+  { id: 'samsung', nombre: "Samsung", anio: '2024', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 5,
+    paleta: [['#9BA9B5', "Gris azulado"], ['#A86355', "Terracota"], ['#2A3D4E', "Azul profundo"]] },
+  { id: 'ibm', nombre: "IBM", anio: '2023', cat: 'Evento corporativo', linea: 'empresarial', fotos: 4,
+    paleta: [['#B1B7BB', "Plateado"], ['#6D4955', "Malva"], ['#192A34', "Azul profundo"]] },
+  { id: 'boda', nombre: "Casamiento", anio: '', cat: 'Casamiento', linea: 'social', fotos: 13,
+    paleta: [['#F3DBB3', "Champagne"], ['#8D6D4F', "Bronce"], ['#051013', "Negro"]] },
 ];
+const DESC_GENERICA = {
+  'Lanzamiento de producto': 'Diseñamos la coctelería del lanzamiento a partir de la identidad de la marca. Colores, ingredientes y puesta en escena pensados para que el producto también se pudiera beber.',
+  'Activación de marca': 'Una activación donde la barra fue parte de la experiencia: tragos de autor y una estación pensada para que el público interactuara con la marca.',
+  'Evento corporativo': 'Coctelería para un evento corporativo, alineada con la identidad de la empresa y el tono del encuentro.',
+  'Evento privado': 'Una celebración privada con barra de autor, pensada a medida del anfitrión y de sus invitados.',
+  'Casamiento': 'Una barra diseñada para la noche: tragos de autor, presentación cuidada y un servicio que acompañó la fiesta de principio a fin.',
+};
+const descTrabajo = t => t.desc || DESC_GENERICA[t.cat] || '';
 
 /* ── Nav: se vuelve sólido al bajar (en páginas con hero) ── */
 const nav = document.querySelector('.nav');
@@ -1502,10 +1625,12 @@ function tarjetaTrabajo(t) {
   a.href = `evento.html?e=${t.id}`;
   a.dataset.linea = t.linea;
   a.innerHTML = `
-    <img src="galeria/${t.id}/portada.jpg" alt="${t.nombre} — Classic Twist" loading="lazy">
+    ${t.video
+      ? `<video autoplay muted loop playsinline preload="metadata" poster="videos/portadas/${t.video}.jpg" src="videos/${t.video}.mp4" aria-label="${t.nombre} — Classic Twist"></video>`
+      : `<img src="galeria/${t.id}/${t.portada || 'portada'}.jpg" alt="${t.nombre} — Classic Twist" loading="lazy">`}
     <div class="trabajo-info">
       <span class="trabajo-nombre">${t.nombre}</span>
-      <span class="trabajo-cat">${t.cat}</span>
+      <span class="trabajo-cat">${t.cat}${t.anio ? ' · ' + t.anio : ''}</span>
     </div>`;
   return a;
 }
