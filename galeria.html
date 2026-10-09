@@ -1171,6 +1171,42 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 @keyframes logos-corre { from { transform: translateX(0); } to { transform: translateX(calc(-100% + 100vw - 40px)); } }
 @media (prefers-reduced-motion: reduce) { .logos-bloque { animation: none; } }
 
+/* ══════════════════════════════════════════════
+   GALERÍA: muro de fotos con el nombre de cada empresa
+══════════════════════════════════════════════ */
+.muro-gal-pagina { padding-top: 70px; }
+.muro-gal-pagina .gl-arriba { padding-bottom: clamp(24px, 2.5vw, 36px); }
+.muro-gal-pagina .filtros { padding: 0; }
+.muro-gal { columns: 5 220px; column-gap: 8px; padding: 0 8px 8px; }
+.mg-item { position: relative; display: block; margin-bottom: 8px; break-inside: avoid; overflow: hidden; background: #e7e2d8; }
+.mg-item[hidden] { display: none; }
+.mg-item img { width: 100%; height: auto; display: block; transition: transform 0.9s var(--ease), filter 0.5s; }
+.mg-item:hover img { transform: scale(1.04); }
+.mg-tag {
+  position: absolute; left: 10px; bottom: 10px;
+  background: var(--beige); color: var(--negro);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+  padding: 6px 10px; display: inline-flex; gap: 8px; align-items: center;
+  opacity: 0; transform: translateY(6px); transition: opacity 0.3s, transform 0.3s;
+}
+.mg-item:hover .mg-tag, .mg-item:focus-visible .mg-tag { opacity: 1; transform: none; }
+@media (hover: none) { .mg-tag { opacity: 1; transform: none; font-size: 10px; padding: 5px 8px; } }
+@media (max-width: 900px) {
+  .muro-gal { columns: 2; column-gap: 6px; padding: 0 6px 6px; }
+  .mg-item { margin-bottom: 6px; }
+  .muro-gal-pagina .gl-arriba { padding-top: 30px; }
+}
+/* Galería: todas las fotos, ordenadas por color en filas (columnas armadas por JS) */
+.muro-gal { columns: auto; display: flex; gap: 8px; align-items: flex-start; }
+.mg-col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.mg-col .mg-item { margin: 0; }
+@media (max-width: 900px) { .muro-gal, .mg-col { gap: 6px; } }
+/* Tira de fotos con enlace (Casamientos / Celebraciones) */
+.tira--fotos a { display: block; overflow: hidden; }
+.tira--fotos img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform 2.2s var(--ease); }
+.tira--fotos a:hover img { transform: scale(1.04); }
+.t-oscuro .seccion-cabeza { border-top-color: var(--linea); }
+
 </style>
 <link rel="icon" href="assets/iconos/puntito_negro.svg" type="image/svg+xml">
 </head>
@@ -1205,18 +1241,30 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <p class="firma">Dirección creativa aplicada al líquido</p>
 </div>
 
-<main class="gl-pagina">
+<main class="muro-gal-pagina">
   <div class="gl-arriba">
     <div>
       <span class="etiqueta aparece">Galería</span>
       <h1 class="h1 aparece d1">Nuestros <span class="ovalo">trabajos</span></h1>
     </div>
-    <span class="gl-pista aparece d2" id="pista">Pasá el mouse o arrastrá · Click para ver el evento</span>
+    <div class="filtros aparece d2" role="group" aria-label="Filtrar trabajos">
+      <button class="filtro activo" data-filtro="todos">Todos</button>
+      <button class="filtro" data-filtro="empresarial">Eventos de marca</button>
+      <button class="filtro" data-filtro="social">Eventos privados</button>
+    </div>
   </div>
-  <div class="carrusel-caja" id="caja">
-    <div class="carrusel" id="carrusel"></div>
-  </div>
+  <div class="muro-gal" id="muro-gal"></div>
 </main>
+
+<footer class="pie">
+  <img class="pie-logo" src="assets/logo/logo_bajada_beige.svg" alt="Classic Twist — Dirección creativa aplicada al líquido" loading="lazy">
+  <div class="pie-fila">
+    <a href="https://www.instagram.com/classictwist.uy/" target="_blank" rel="noopener">@classictwist.uy</a>
+    <a href="mailto:propuestas@classictwist.uy">propuestas@classictwist.uy</a>
+    <a href="https://wa.me/59891237917" target="_blank" rel="noopener">(+598) 91 237 917</a>
+    <span>© 2026 Classic Twist · Uruguay</span>
+  </div>
+</footer>
 
 <script>
 /* ══════════════════════════════════════════════
@@ -1231,11 +1279,11 @@ const TRABAJOS = [
   { id: 'hym',        nombre: 'H&M',            cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 6 },
   { id: 'samsung',    nombre: 'Samsung',        cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 5 },
   { id: 'loreal',     nombre: "L'Oréal",        cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 6 },
-  { id: 'roche',      nombre: 'La Roche-Posay', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 6 },
+  { id: 'roche',      nombre: 'La Roche-Posay', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 1 },
   { id: 'ibm',        nombre: 'IBM',            cat: 'Evento corporativo',      linea: 'empresarial', fotos: 4 },
   { id: 'exat',       nombre: 'Exat',           cat: 'Evento corporativo',      linea: 'empresarial', fotos: 5 },
   { id: 'fixed',      nombre: 'Fixed',          cat: 'Evento privado',          linea: 'social',      fotos: 7 },
-  { id: 'casamiento', nombre: 'Casamiento',     cat: 'Evento privado',          linea: 'social',      fotos: 5 },
+  { id: 'boda',       nombre: 'Casamiento',     cat: 'Casamiento',              linea: 'social',      fotos: 13 },
 ];
 
 /* ── Nav: se vuelve sólido al bajar (en páginas con hero) ── */
@@ -1387,100 +1435,53 @@ document.querySelectorAll('.equipo-num').forEach(n => {
 
 </script>
 <script>
-if (matchMedia('(hover: none)').matches) document.getElementById('pista').textContent = 'Deslizá · Tocá para ver el evento';
-
-/* Carrusel infinito — misma lógica que la galería anterior */
-const N = TRABAJOS.length, COPIAS = 3;
-const caja = document.getElementById('caja');
-const carrusel = document.getElementById('carrusel');
-const items = [];
-let activo = N + 3;
-
-for (let c = 0; c < COPIAS; c++) {
-  TRABAJOS.forEach((t, i) => {
-    const el = document.createElement('div');
-    el.className = 'ev-item';
-    el.dataset.real = i;
-    if (t.linea === 'social') el.style.setProperty('--ev-color', 'var(--verde)');
-    el.innerHTML = `
-      <span class="ev-label">${t.nombre}</span>
-      <div class="ev-card"><img src="galeria/${t.id}/portada.jpg" alt="${t.nombre} — Classic Twist" loading="${c === 1 ? 'eager' : 'lazy'}"></div>
-      <span class="ev-cat">${t.cat}</span>`;
-    carrusel.appendChild(el);
-    items.push(el);
-  });
-}
-
-function marcar(a) {
-  items.forEach((el, i) => {
-    let d = Math.abs((i % N) - (a % N));
-    if (d > N / 2) d = N - d;
-    el.classList.toggle('is-active', d === 0);
-    el.classList.toggle('is-near', d === 1);
-    el.classList.toggle('is-near2', d === 2);
-    el.style.opacity = ['1', '0.82', '0.58', '0.36'][d] || '0.2';
-  });
-}
-
-let anim = null;
-function centrar(g, instantaneo = false) {
-  const el = items[g]; if (!el) return;
-  const destino = Math.round(el.offsetLeft + el.offsetWidth / 2 - caja.offsetWidth / 2);
-  if (instantaneo) { caja.scrollLeft = destino; return; }
-  if (anim) cancelAnimationFrame(anim);
-  const ini = caja.scrollLeft, dist = destino - ini, t0 = performance.now(), DUR = 820;
-  const ease = t => t < 0.5 ? 8 * t ** 4 : 1 - Math.pow(-2 * t + 2, 4) / 2;
-  const paso = now => {
-    const p = Math.min((now - t0) / DUR, 1);
-    caja.scrollLeft = ini + dist * ease(p);
-    anim = p < 1 ? requestAnimationFrame(paso) : null;
-  };
-  anim = requestAnimationFrame(paso);
-}
-
-let bloqueo = false;
-caja.addEventListener('scroll', () => {
-  if (bloqueo || window.innerWidth <= 900) return;
-  const ancho = items[N].offsetLeft - items[0].offsetLeft;
-  if (caja.scrollLeft < ancho * 0.4) { bloqueo = true; caja.scrollLeft += ancho; activo += N; setTimeout(() => bloqueo = false, 50); }
-  else if (caja.scrollLeft > ancho * 1.6) { bloqueo = true; caja.scrollLeft -= ancho; activo -= N; setTimeout(() => bloqueo = false, 50); }
-}, { passive: true });
-
-let timer = null;
-items.forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    if (window.innerWidth <= 900) return;
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      const r = +el.dataset.real;
-      activo = [r, r + N, r + 2 * N].reduce((a, b) => Math.abs(a - activo) <= Math.abs(b - activo) ? a : b);
-      marcar(activo); centrar(activo);
-    }, 200);
-  });
-  el.addEventListener('mouseleave', () => clearTimeout(timer));
-  let x0 = 0;
-  el.addEventListener('pointerdown', e => x0 = e.clientX);
-  el.addEventListener('pointerup', e => {
-    if (Math.abs(e.clientX - x0) < 6) location.href = `evento.html?e=${TRABAJOS[+el.dataset.real].id}`;
-  });
+/* Todas las fotos, agrupadas por paleta de color:
+   rojos → rosados → claros → azules → blanco y negro → dorados de noche */
+const FOTOS = [
+  ['hym/01',1.25], ['hym/04',1.249], ['vichy/03',1.5], ['hym/06',1.249], ['vichy/07',1.5], ['vichy2026/04',1.5], ['hym/02',1.25], ['vichy/09',1.499], ['vichy2026/06',0.667], ['vichy/05',0.666], ['hym2026/05',1.5], ['vichy2026/09',0.667], ['vichy/08',0.666], ['vichy2026/01',1.5], ['hym2026/16',0.667], ['vichy/04',1.499], ['hym/03',1.25],
+  ['vichy/01',1.5], ['loreal/01',1.5], ['vichy2026/03',0.667], ['vichy/02',1.5], ['loreal/04',1.5], ['vichy2026/05',0.667], ['vichy/06',1.5], ['loreal/02',1.5], ['ibm/02',1.498], ['vichy2026/07',0.667], ['samsung/01',1.502], ['loreal/05',0.666], ['exat/05',1.502], ['vichy2026/08',0.667], ['loreal/06',0.666], ['exat/04',0.665],
+  ['loreal/03',1.5], ['fixed/01',0.666], ['samsung/04',1.503], ['fixed/02',0.667], ['hym/05',1.25], ['fixed/04',1.498], ['exat/01',0.665], ['fixed/05',1.498], ['samsung/02',0.665], ['fixed/07',0.666],
+  ['ibm/01',1.498], ['exat/02',1.502], ['roche/01',0.666], ['fixed/03',1.5], ['samsung/05',1.503], ['ibm/03',1.498], ['exat/03',1.502], ['fixed/06',0.666], ['samsung/03',1.502], ['ibm/04',0.667],
+  ['boda/07',1.5], ['boda/08',1.5], ['boda/09',1.5], ['boda/10',1.5],
+  ['hym2026/14',1.5], ['boda/01',1.5], ['hym2026/11',0.667], ['boda/03',1.5], ['hym2026/02',1.5], ['boda/05',1.5], ['hym2026/18',0.667], ['hym2026/12',0.667], ['boda/04',1.5], ['hym2026/01',1.5], ['boda/06',1.5], ['hym2026/03',1.5], ['vichy2026/02',1.5], ['hym2026/04',1.5], ['boda/02',1.5], ['hym2026/15',1.5], ['boda/11',1.5], ['hym2026/17',0.667], ['hym2026/10',1.5], ['boda/12',1.5], ['hym2026/09',0.667], ['hym2026/13',0.667], ['boda/13',1.5], ['hym2026/06',1.5], ['hym2026/07',1.5], ['hym2026/08',0.667]
+];
+const muroGal = document.getElementById('muro-gal');
+const porId = Object.fromEntries(TRABAJOS.map(t => [t.id, t]));
+const items = FOTOS.map(([ruta, r]) => {
+  const t = porId[ruta.split('/')[0]];
+  const a = document.createElement('a');
+  a.className = 'mg-item';
+  a.href = `evento.html?e=${t.id}`;
+  a.dataset.linea = t.linea;
+  a.dataset.r = r;
+  a.innerHTML = `<img src="galeria/${ruta}.jpg" alt="${t.nombre} — Classic Twist" loading="lazy" width="600" height="${Math.round(600 * r)}">
+    <span class="mg-tag">${t.nombre} <span aria-hidden="true">+</span></span>`;
+  return a;
 });
-
-/* Arrastrar */
-let arrastrando = false, ax = 0, as = 0;
-caja.addEventListener('mousedown', e => { arrastrando = true; ax = e.pageX; as = caja.scrollLeft; });
-caja.addEventListener('mousemove', e => { if (arrastrando) caja.scrollLeft = as - (e.pageX - ax); });
-['mouseup', 'mouseleave'].forEach(ev => caja.addEventListener(ev, () => arrastrando = false));
-
-/* Flechas del teclado */
-document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight') { activo++; marcar(activo); centrar(activo); }
-  if (e.key === 'ArrowLeft')  { activo--; marcar(activo); centrar(activo); }
-  if (e.key === 'Enter') location.href = `evento.html?e=${TRABAJOS[activo % N].id}`;
+/* Reparte en columnas fila por fila (siempre a la más corta) para que los colores se lean en franjas */
+let filtro = 'todos';
+function armarMuro() {
+  const w = window.innerWidth;
+  const n = w < 900 ? 2 : w < 1400 ? 4 : 5;
+  muroGal.innerHTML = '';
+  const cols = Array.from({ length: n }, () => { const c = document.createElement('div'); c.className = 'mg-col'; muroGal.appendChild(c); return c; });
+  const alto = new Array(n).fill(0);
+  items.filter(a => filtro === 'todos' || a.dataset.linea === filtro).forEach(a => {
+    const i = alto.indexOf(Math.min(...alto));
+    cols[i].appendChild(a);
+    alto[i] += +a.dataset.r + 0.02;
+  });
+}
+armarMuro();
+let anchoPrevio = window.innerWidth;
+window.addEventListener('resize', () => {
+  clearTimeout(window.__mg);
+  window.__mg = setTimeout(() => { if (window.innerWidth !== anchoPrevio) { anchoPrevio = window.innerWidth; armarMuro(); } }, 150);
 });
-
-document.fonts.ready.then(() => requestAnimationFrame(() => {
-  if (window.innerWidth <= 900) { carrusel.querySelectorAll('.ev-item').forEach((el, i) => { if (i < N || i >= 2 * N) el.remove(); }); return; }
-  centrar(activo, true); marcar(activo);
+document.querySelectorAll('.filtro').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.filtro').forEach(x => x.classList.toggle('activo', x === b));
+  filtro = b.dataset.filtro;
+  armarMuro();
 }));
 </script>
 </body>

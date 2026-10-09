@@ -1170,6 +1170,42 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 @keyframes logos-corre { from { transform: translateX(0); } to { transform: translateX(calc(-100% + 100vw - 40px)); } }
 @media (prefers-reduced-motion: reduce) { .logos-bloque { animation: none; } }
 
+/* ══════════════════════════════════════════════
+   GALERÍA: muro de fotos con el nombre de cada empresa
+══════════════════════════════════════════════ */
+.muro-gal-pagina { padding-top: 70px; }
+.muro-gal-pagina .gl-arriba { padding-bottom: clamp(24px, 2.5vw, 36px); }
+.muro-gal-pagina .filtros { padding: 0; }
+.muro-gal { columns: 5 220px; column-gap: 8px; padding: 0 8px 8px; }
+.mg-item { position: relative; display: block; margin-bottom: 8px; break-inside: avoid; overflow: hidden; background: #e7e2d8; }
+.mg-item[hidden] { display: none; }
+.mg-item img { width: 100%; height: auto; display: block; transition: transform 0.9s var(--ease), filter 0.5s; }
+.mg-item:hover img { transform: scale(1.04); }
+.mg-tag {
+  position: absolute; left: 10px; bottom: 10px;
+  background: var(--beige); color: var(--negro);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+  padding: 6px 10px; display: inline-flex; gap: 8px; align-items: center;
+  opacity: 0; transform: translateY(6px); transition: opacity 0.3s, transform 0.3s;
+}
+.mg-item:hover .mg-tag, .mg-item:focus-visible .mg-tag { opacity: 1; transform: none; }
+@media (hover: none) { .mg-tag { opacity: 1; transform: none; font-size: 10px; padding: 5px 8px; } }
+@media (max-width: 900px) {
+  .muro-gal { columns: 2; column-gap: 6px; padding: 0 6px 6px; }
+  .mg-item { margin-bottom: 6px; }
+  .muro-gal-pagina .gl-arriba { padding-top: 30px; }
+}
+/* Galería: todas las fotos, ordenadas por color en filas (columnas armadas por JS) */
+.muro-gal { columns: auto; display: flex; gap: 8px; align-items: flex-start; }
+.mg-col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.mg-col .mg-item { margin: 0; }
+@media (max-width: 900px) { .muro-gal, .mg-col { gap: 6px; } }
+/* Tira de fotos con enlace (Casamientos / Celebraciones) */
+.tira--fotos a { display: block; overflow: hidden; }
+.tira--fotos img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform 2.2s var(--ease); }
+.tira--fotos a:hover img { transform: scale(1.04); }
+.t-oscuro .seccion-cabeza { border-top-color: var(--linea); }
+
 </style>
 <link rel="icon" href="assets/iconos/puntito_negro.svg" type="image/svg+xml">
 </head>
@@ -1266,11 +1302,11 @@ const TRABAJOS = [
   { id: 'hym',        nombre: 'H&M',            cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 6 },
   { id: 'samsung',    nombre: 'Samsung',        cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 5 },
   { id: 'loreal',     nombre: "L'Oréal",        cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 6 },
-  { id: 'roche',      nombre: 'La Roche-Posay', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 6 },
+  { id: 'roche',      nombre: 'La Roche-Posay', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 1 },
   { id: 'ibm',        nombre: 'IBM',            cat: 'Evento corporativo',      linea: 'empresarial', fotos: 4 },
   { id: 'exat',       nombre: 'Exat',           cat: 'Evento corporativo',      linea: 'empresarial', fotos: 5 },
   { id: 'fixed',      nombre: 'Fixed',          cat: 'Evento privado',          linea: 'social',      fotos: 7 },
-  { id: 'casamiento', nombre: 'Casamiento',     cat: 'Evento privado',          linea: 'social',      fotos: 5 },
+  { id: 'boda',       nombre: 'Casamiento',     cat: 'Casamiento',              linea: 'social',      fotos: 13 },
 ];
 
 /* ── Nav: se vuelve sólido al bajar (en páginas con hero) ── */
