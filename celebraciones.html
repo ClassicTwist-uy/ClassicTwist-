@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Celebraciones privadas | Classic Twist — Barra de tragos para cumpleaños, aniversarios y fiestas</title>
 <meta name="description" content="Barra de tragos y coctelería de autor para cumpleaños, aniversarios, reuniones y fiestas privadas en Uruguay.">
-<link rel="canonical" href="https://classic-twist.vercel.app/celebraciones.html">
+<link rel="canonical" href="https://classic-twist.vercel.app/celebraciones">
 <meta name="theme-color" content="#F4F1EA">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://classic-twist.vercel.app/celebraciones.html">
+<meta property="og:url" content="https://classic-twist.vercel.app/celebraciones">
 <meta property="og:title" content="Celebraciones privadas | Classic Twist — Barra de tragos para cumpleaños, aniversarios y fiestas">
 <meta property="og:description" content="Barra de tragos y coctelería de autor para cumpleaños, aniversarios, reuniones y fiestas privadas en Uruguay.">
 <meta property="og:locale" content="es_UY">
@@ -1487,7 +1487,6 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <div class="ct-der">
     <div class="ct-item aparece"><span class="etiqueta">Mail</span><a class="ct-valor" href="mailto:propuestas@classictwist.uy">propuestas@classictwist.uy</a></div>
     <div class="ct-item aparece d1"><span class="etiqueta">Instagram</span><a class="ct-valor" href="https://www.instagram.com/classictwist.uy/" target="_blank" rel="noopener">@classictwist.uy</a></div>
-    <div class="ct-item aparece d2"><span class="etiqueta">WhatsApp</span><a class="ct-valor" href="https://wa.me/59891237917" target="_blank" rel="noopener">(+598) 91 237 917</a></div>
     <div class="ct-item aparece d3"><span class="etiqueta">Ubicación</span><span class="ct-valor">Montevideo, Uruguay</span></div>
   </div>
 </section>
@@ -1499,7 +1498,6 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <div class="pie-fila">
     <a href="https://www.instagram.com/classictwist.uy/" target="_blank" rel="noopener">@classictwist.uy</a>
     <a href="mailto:propuestas@classictwist.uy">propuestas@classictwist.uy</a>
-    <a href="https://wa.me/59891237917" target="_blank" rel="noopener">(+598) 91 237 917</a>
     <span>© 2026 Classic Twist · Uruguay</span>
   </div>
 </footer>
@@ -1516,31 +1514,33 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
    video: video de portada en videos/ (opcional); videos: otros videos que se suman a la galería.
    un tercer valor 'red' muestra la textura de red en vez de color liso. */
 const TRABAJOS = [
-  { id: 'hym2026', nombre: "Stella McCartney × H&M", anio: '2026', cat: 'Lanzamiento de colección', linea: 'empresarial', fotos: 18, portada: '07',
+  { id: 'hym2026', nombre: "Stella McCartney × H&M", anio: '2026', cat: 'Lanzamiento de colección', linea: 'empresarial', fotos: 16, portada: '07',
     desc: 'Stella McCartney vuelve a H&M con una colección que cuida el medio ambiente, en tonos tierra. Diseñamos dos cócteles inspirados en su colección, servidos en una estación.',
     paleta: [['#5F6A3F', "Verde"], ['#E50010', "Rojo H&M"], ['#D9C7A3', "Beige"]] },
-  { id: 'vichy2026', nombre: "Vichy", anio: '2026', cat: 'Activación de marca', linea: 'empresarial', fotos: 9, portada: '08',
+  { id: 'golf50', nombre: "Cumpleaños de 50", anio: '2025', cat: 'Celebraciones', linea: 'social', fotos: 6, video: 'golf-2',
+    desc: 'Cincuenta años, una noche para brindar. Armamos la barra en el Club de Golf con tragos de autor llenos de color para celebrar en grande.' },
+  { id: 'vichy2026', nombre: "Vichy", anio: '2026', cat: 'Activación de marca', linea: 'empresarial', fotos: 9, portada: '08', videos: ['vichy2026-1'],
     desc: 'La nueva era de tu piel: un sistema en red donde cada decisión cuenta. Llevamos la red a cuatro tragos de autor y a un ritual interactivo donde aparece la V de Vichy.',
     paleta: [['#CB2613', "Rojo Vichy"], ['#FFFFFF', "Red", 'red'], ['#FFFFFF', "Blanco"]] },
-  { id: 'toyota2026', nombre: "Toyota bZ4X", anio: '2026', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 7, video: 'toyota',
+  { id: 'toyota2026', nombre: "Toyota bZ4X", anio: '2026', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 7, video: 'toyota-2',
     desc: 'Lanzamiento del nuevo Toyota bZ4X en Uruguay. Diseñamos una barra en clave azul, con tragos de autor y hielo cristalino, pensada para acompañar la presentación del auto.',
     paleta: [['#0285CD', "Azul eléctrico"], ['#020F4F', "Azul noche"], ['#C9CED4', "Plateado"]] },
   { id: 'fixed', nombre: "Fixed", anio: '2025', cat: 'After office', linea: 'empresarial', fotos: 8,
     desc: 'After office para inaugurar las nuevas oficinas de Fixed. Una barra pensada desde la tecnología, la innovación, la simplicidad y la rapidez, en los colores de la marca.',
     paleta: [['#C9CED4', "Plateado"], ['#011955', "Azul Fixed"], ['#019F96', "Verde Fixed"]] },
-  { id: 'exat', nombre: "Exat", anio: '2025', cat: 'Fiesta de fin de año', linea: 'empresarial', fotos: 10,
-    desc: 'Fiesta de fin de año de Exat. Una barra de tragos de autor en los colores de la marca, con hielo cristalino grabado con su logo, para cerrar el año con todo el equipo.',
-    paleta: [['#1A3D59', "Azul Exat"], ['#ABBA73', "Verde Exat"]] },
-  { id: 'loreal', nombre: "Lancôme", anio: '2025', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 10,
-    video: 'lancome-0', videos: ['lancome-1', 'lancome-2', 'lancome-3'],
+  { id: 'loreal', nombre: "Lancôme", anio: '2025', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 8,
+    video: 'lancome-0', videos: ['lancome-1', 'lancome-2'],
     desc: 'Para Lancôme armamos una barra sin alcohol de mocktails, donde la coctelería y la estética se encuentran en clave rosa, con una presentación pensada desde la marca.',
     paleta: [['#EBCBCB', "Rosa claro"], ['#DEA09C', "Rosa"], ['#B7676A', "Rosa viejo"]] },
   { id: 'vichy', nombre: "Vichy", anio: '2025', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 9,
     paleta: [['#B17D95', "Malva"], ['#7C1D26', "Rojo"], ['#2E1B1D', "Bordó"]] },
-  { id: 'hym', nombre: "H&M", anio: '2025', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 6,
-    paleta: [['#A91D29', "Rojo"], ['#7C5954', "Rosa viejo"], ['#050609', "Negro"]] },
+  { id: 'exat', nombre: "Exat", anio: '2025', cat: 'Fiesta de fin de año', linea: 'empresarial', fotos: 10, video: 'exat',
+    desc: 'Fiesta de fin de año de Exat. Una barra de tragos de autor en los colores de la marca, con hielo cristalino grabado con su logo, para cerrar el año con todo el equipo.',
+    paleta: [['#1A3D59', "Azul Exat"], ['#ABBA73', "Verde Exat"]] },
   { id: 'roche', nombre: "La Roche-Posay", anio: '2025', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 1,
     paleta: [['#6B7DAA', "Azul"], ['#875F61', "Rosa viejo"], ['#25315B', "Azul profundo"]] },
+  { id: 'hym', nombre: "H&M", anio: '2025', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 6, video: 'hym-v2',
+    paleta: [['#A91D29', "Rojo"], ['#7C5954', "Rosa viejo"], ['#050609', "Negro"]] },
   { id: 'samsung', nombre: "Samsung", anio: '2024', cat: 'Lanzamiento de producto', linea: 'empresarial', fotos: 5,
     paleta: [['#9BA9B5', "Gris azulado"], ['#A86355', "Terracota"], ['#2A3D4E', "Azul profundo"]] },
   { id: 'ibm', nombre: "IBM", anio: '2023', cat: 'Evento corporativo', linea: 'empresarial', fotos: 4,
@@ -1618,11 +1618,14 @@ document.querySelectorAll('.pasafotos').forEach(caja => {
   }, Number(caja.dataset.intervalo || 2600));
 });
 
+/* Enlace sin ".html" cuando la web está publicada */
+const enlace = h => location.protocol.startsWith('http') ? h.replace(/^index\.html/, '/').replace(/\.html(?=\?|#|$)/, '') : h;
+
 /* ── Tarjeta de trabajo (galería) ── */
 function tarjetaTrabajo(t) {
   const a = document.createElement('a');
   a.className = 'trabajo';
-  a.href = `evento.html?e=${t.id}`;
+  a.href = enlace(`evento.html?e=${t.id}`);
   a.dataset.linea = t.linea;
   a.innerHTML = `
     ${t.video
@@ -1705,6 +1708,15 @@ document.querySelectorAll('.equipo-num').forEach(n => {
     quieto = setTimeout(() => nav.classList.remove('moviendo'), 260);
   }, { passive: true });
 })();
+
+/* ── URLs sin ".html" cuando la web está publicada (en la compu se mantienen para poder verla) ── */
+if (location.protocol.startsWith('http')) {
+  document.querySelectorAll('a[href]').forEach(a => {
+    const h = a.getAttribute('href');
+    if (/^https?:|^mailto:|^#/.test(h) || !/\.html(\?|#|$)/.test(h)) return;
+    a.setAttribute('href', h.replace(/^index\.html/, '/').replace(/\.html(?=\?|#|$)/, ''));
+  });
+}
 
 </script>
 <script>
