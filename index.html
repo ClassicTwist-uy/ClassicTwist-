@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-UY">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Classic Twist | Estudio de coctelería para marcas, casamientos y celebraciones — Uruguay</title>
-<meta name="description" content="Classic Twist es un estudio de coctelería en Uruguay. Dirección creativa aplicada al líquido para lanzamientos, eventos corporativos, casamientos y celebraciones privadas.">
-<link rel="canonical" href="https://classic-twist.vercel.app/">
+<title>Barra de tragos y coctelería para eventos · Classic Twist</title>
+<meta name="description" content="Estudio de coctelería en Uruguay. Tragos de autor, con y sin alcohol, para eventos corporativos, lanzamientos, casamientos y celebraciones.">
+<link rel="canonical" href="https://classictwist.uy/">
 <meta name="theme-color" content="#F4F1EA">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://classic-twist.vercel.app/">
-<meta property="og:title" content="Classic Twist | Estudio de coctelería para marcas, casamientos y celebraciones — Uruguay">
-<meta property="og:description" content="Classic Twist es un estudio de coctelería en Uruguay. Dirección creativa aplicada al líquido para lanzamientos, eventos corporativos, casamientos y celebraciones privadas.">
+<meta property="og:url" content="https://classictwist.uy/">
+<meta property="og:title" content="Barra de tragos y coctelería para eventos · Classic Twist">
+<meta property="og:description" content="Estudio de coctelería en Uruguay. Tragos de autor, con y sin alcohol, para eventos corporativos, lanzamientos, casamientos y celebraciones.">
 <meta property="og:locale" content="es_UY">
 <meta property="og:site_name" content="Classic Twist">
+<meta property="og:image" content="https://classictwist.uy/assets/img/og/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Copas de tragos de autor sobre la barra de Classic Twist">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="google-site-verification" content="f9MW6PVFHCJmDR2wzplbZbsj_bzTQ6ecoh6ed5Bx4T0" />
 <script type="application/ld+json">
 {
@@ -21,12 +26,18 @@
   "name": "Classic Twist",
   "slogan": "Dirección creativa aplicada al líquido",
   "description": "Estudio de coctelería especializado en activaciones y lanzamientos de marca, eventos corporativos, casamientos y celebraciones privadas en Uruguay.",
-  "url": "https://classic-twist.vercel.app",
-  "logo": "https://classic-twist.vercel.app/assets/logo/logo_negro.svg",
-  "telephone": "+59891237917",
+  "url": "https://classictwist.uy/",
+  "logo": "https://classictwist.uy/assets/logo/logo_negro.svg",
+  "image": "https://classictwist.uy/assets/img/og/og-home.jpg",
   "email": "propuestas@classictwist.uy",
   "address": { "@type": "PostalAddress", "addressLocality": "Montevideo", "addressCountry": "UY" },
-  "areaServed": { "@type": "Country", "name": "Uruguay" },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Montevideo" },
+    { "@type": "AdministrativeArea", "name": "Canelones" },
+    { "@type": "AdministrativeArea", "name": "Maldonado" },
+    { "@type": "City", "name": "Punta del Este" },
+    { "@type": "City", "name": "José Ignacio" }
+  ],
   "sameAs": ["https://www.instagram.com/classictwist.uy/"],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -1330,22 +1341,27 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 .trabajo video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.9s var(--ease), opacity 0.5s; }
 .trabajo:hover video { transform: scale(1.04); opacity: 0.82; }
 
+/* Variación de acento en la home: algunos detalles en coral (#E35336) */
+.muro-texto .ovalo { --ovalo: var(--coral); }
+.etiqueta.acento-coral { --acento: var(--coral); }
+.scroll-aviso::after { background: var(--coral); }
+
 </style>
 </head>
 <body>
 
 <header class="nav">
-  <a href="index.html" class="nav-logo" aria-label="Classic Twist — inicio">
+  <a href="/" class="nav-logo" aria-label="Classic Twist — inicio">
     <img class="logo-claro" src="assets/logo/logo_beige.svg" alt="Classic Twist">
     <img class="logo-oscuro" src="assets/logo/logo_negro.svg" alt="" aria-hidden="true">
   </a>
   <nav aria-label="Principal">
     <ul class="nav-links">
-      <li><a href="eventos-de-marca.html">Eventos de marca</a></li>
-      <li><a href="casamientos.html">Casamientos</a></li>
-      <li><a href="celebraciones.html">Celebraciones</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="equipo.html">Equipo</a></li>
+      <li><a href="/eventos-corporativos">Eventos corporativos</a></li>
+      <li><a href="/casamientos">Casamientos</a></li>
+      <li><a href="/celebraciones">Celebraciones</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/equipo">Equipo</a></li>
       <li><a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="nav-cta">Contacto</a></li>
     </ul>
   </nav>
@@ -1353,12 +1369,12 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 </header>
 
 <div class="menu-movil">
-  <a href="index.html">Inicio</a>
-  <a href="eventos-de-marca.html">Eventos de marca</a>
-  <a href="casamientos.html">Casamientos</a>
-  <a href="celebraciones.html">Celebraciones</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="equipo.html">Nuestro equipo</a>
+  <a href="/">Inicio</a>
+  <a href="/eventos-corporativos">Eventos corporativos</a>
+  <a href="/casamientos">Casamientos</a>
+  <a href="/celebraciones">Celebraciones</a>
+  <a href="/portfolio">Portfolio</a>
+  <a href="/equipo">Nuestro equipo</a>
   <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn">Contacto</a>
   <p class="firma">Dirección creativa aplicada al líquido</p>
 </div>
@@ -1367,13 +1383,13 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 
 <!-- ══════════ TRES VIDEOS — UNO POR LÍNEA ══════════ -->
 <section class="triptico" aria-label="Classic Twist">
-  <a class="panel" href="eventos-de-marca.html" aria-label="Eventos de marca">
+  <a class="panel" href="/eventos-corporativos" aria-label="Eventos corporativos">
     <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/hym-v2.jpg" src="videos/hym-v2.mp4"></video>
   </a>
-  <a class="panel" href="casamientos.html" aria-label="Casamientos">
+  <a class="panel" href="/casamientos" aria-label="Casamientos">
     <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento.jpg" src="videos/casamiento.mp4"></video>
   </a>
-  <a class="panel" href="celebraciones.html" aria-label="Celebraciones privadas">
+  <a class="panel" href="/celebraciones" aria-label="Celebraciones privadas">
     <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video>
   </a>
   <h1 class="triptico-logo"><img src="assets/logo/logo_bajada_beige.svg" alt="Classic Twist — Dirección creativa aplicada al líquido"></h1>
@@ -1383,28 +1399,28 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 <!-- ══════════ QUÉ SOMOS (centrado) ══════════ -->
 <section class="somos" id="classic-twist">
   <span class="etiqueta aparece">Classic Twist</span>
-  <p class="somos-texto aparece d1">Somos un estudio de coctelería. Aplicamos dirección creativa a las bebidas: creamos tragos, con y sin alcohol, pensados para marcas, bodas y celebraciones privadas.</p>
+  <p class="somos-texto aparece d1">Somos un estudio de coctelería en Uruguay. Aplicamos dirección creativa a las bebidas: creamos tragos de autor, con y sin alcohol, pensados para marcas, casamientos y celebraciones privadas.</p>
 </section>
 
 <!-- ══════════ NUESTROS SERVICIOS (los tres) ══════════ -->
-<div style="text-align:center;padding-bottom:28px"><span class="etiqueta aparece">Nuestros servicios</span></div>
+<div style="text-align:center;padding-bottom:28px"><h2 class="etiqueta aparece acento-coral">Barra de tragos para eventos</h2></div>
 <nav class="servicios-tres" aria-label="Nuestros servicios">
-  <a class="servicio-link" href="eventos-de-marca.html">
+  <a class="servicio-link" href="/eventos-corporativos">
     <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/hym-v2.jpg" src="videos/hym-v2.mp4"></video>
     <span class="servicio-link-num">01</span>
-    <div><div class="servicio-link-nombre">Eventos de marca</div></div>
-    <div class="servicio-link-pie"><span>Lanzamientos, activaciones y eventos corporativos.</span><span aria-hidden="true">→</span></div>
+    <div><h3 class="servicio-link-nombre">Eventos corporativos</h3></div>
+    <div class="servicio-link-pie"><span>Lanzamientos, activaciones, eventos de marca y fiestas de fin de año.</span><span aria-hidden="true">→</span></div>
   </a>
-  <a class="servicio-link" href="casamientos.html">
+  <a class="servicio-link" href="/casamientos">
     <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento.jpg" src="videos/casamiento.mp4"></video>
     <span class="servicio-link-num">02</span>
-    <div><div class="servicio-link-nombre">Casamientos</div></div>
+    <div><h3 class="servicio-link-nombre">Casamientos</h3></div>
     <div class="servicio-link-pie"><span>Tragos únicos como su historia de amor.</span><span aria-hidden="true">→</span></div>
   </a>
-  <a class="servicio-link" href="celebraciones.html">
+  <a class="servicio-link" href="/celebraciones">
     <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video>
     <span class="servicio-link-num">03</span>
-    <div><div class="servicio-link-nombre">Celebraciones privadas</div></div>
+    <div><h3 class="servicio-link-nombre">Celebraciones privadas</h3></div>
     <div class="servicio-link-pie"><span>Cumpleaños, aniversarios, reuniones y fiestas.</span><span aria-hidden="true">→</span></div>
   </a>
 </nav>
@@ -1414,13 +1430,14 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <div class="muro-texto">
     <span class="etiqueta aparece">Nuestros trabajos</span>
     <h2 class="h2 aparece d1">¿Cómo sería<br>tu evento si<br>se pudiera <span class="ovalo">beber?</span></h2>
-    <p class="cuerpo aparece d2">H&amp;M 2026 y Vichy 2026: lanzamientos y activaciones donde la coctelería fue parte del concepto.</p>
-    <a href="portfolio.html" class="link-flecha aparece d3" style="align-self:flex-start;margin-top:32px">Ver portfolio <span aria-hidden="true">→</span></a>
+    <p class="cuerpo aparece d2">Para nosotras, la coctelería es una forma de diseño. Cada trago de autor nace de un concepto y se construye con sabor, aroma, estética y puesta en escena.</p>
+    <p class="cuerpo aparece d2" style="margin-top:1em">Por eso no somos solo la barra de tragos del evento: diseñamos la coctelería de cada marca, cada pareja y cada celebración.</p>
+    <a href="/portfolio" class="link-flecha aparece d3" style="align-self:flex-start;margin-top:32px">Ver el portfolio <span aria-hidden="true">→</span></a>
   </div>
   <div class="muro" aria-hidden="true">
-    <div class="muro-col"><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/01.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/04.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/vichy2026/04.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/01.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/04.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/vichy2026/04.jpg" alt="" loading="lazy"></a></div>
-    <div class="muro-col"><a href="portfolio.html" tabindex="-1"><img src="galeria/vichy2026/01.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/03.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/vichy2026/08.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/06.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/vichy2026/01.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/03.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/vichy2026/08.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/06.jpg" alt="" loading="lazy"></a></div>
-    <div class="muro-col"><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/02.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/vichy2026/06.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/05.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/07.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/02.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/vichy2026/06.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/05.jpg" alt="" loading="lazy"></a><a href="portfolio.html" tabindex="-1"><img src="galeria/hym2026/07.jpg" alt="" loading="lazy"></a></div>
+    <div class="muro-col"><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/01.jpg" alt="Copas coupé con trago rojo sobre la barra, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/04.jpg" alt="Copa coupé sobre un mueble de madera antiguo, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/vichy2026/04.jpg" alt="Invitada armando su trago en la estación interactiva, activación de Vichy" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/01.jpg" alt="Copas coupé con trago rojo sobre la barra, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/04.jpg" alt="Copa coupé sobre un mueble de madera antiguo, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/vichy2026/04.jpg" alt="Invitada armando su trago en la estación interactiva, activación de Vichy" loading="lazy"></a></div>
+    <div class="muro-col"><a href="/portfolio" tabindex="-1"><img src="galeria/vichy2026/01.jpg" alt="Bartender terminando un trago de autor en la barra, activación de Vichy" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/03.jpg" alt="Copa de trago rojo bajo un círculo de luz, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/vichy2026/08.jpg" alt="Bartender colocando la red de Vichy sobre una copa de trago rojo, activación de Vichy" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/06.jpg" alt="Mano sosteniendo un trago frente a una cortina verde, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/vichy2026/01.jpg" alt="Bartender terminando un trago de autor en la barra, activación de Vichy" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/03.jpg" alt="Copa de trago rojo bajo un círculo de luz, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/vichy2026/08.jpg" alt="Bartender colocando la red de Vichy sobre una copa de trago rojo, activación de Vichy" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/06.jpg" alt="Mano sosteniendo un trago frente a una cortina verde, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a></div>
+    <div class="muro-col"><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/02.jpg" alt="Fila de copas con tragos de autor sobre la barra iluminada, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/vichy2026/06.jpg" alt="Tragos rojos en fila con decoración en palillo, activación de Vichy" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/05.jpg" alt="Invitados brindando con copas de cóctel, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/07.jpg" alt="Dos cócteles junto a imágenes de la colección, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/02.jpg" alt="Fila de copas con tragos de autor sobre la barra iluminada, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/vichy2026/06.jpg" alt="Tragos rojos en fila con decoración en palillo, activación de Vichy" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/05.jpg" alt="Invitados brindando con copas de cóctel, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a><a href="/portfolio" tabindex="-1"><img src="galeria/hym2026/07.jpg" alt="Dos cócteles junto a imágenes de la colección, lanzamiento Stella McCartney × H&amp;M" loading="lazy"></a></div>
   </div>
 </section>
 
@@ -1434,13 +1451,13 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <div class="ct-izq">
     <span class="etiqueta aparece">Hablemos</span>
     <h2 class="h2 aparece d1">Tu próximo evento<br>empieza con<br>una <span class="ovalo">idea.</span></h2>
-    <p class="ct-sub aparece d2">Contanos qué estás planeando. Nos encanta el primer contacto.</p>
+    <p class="ct-sub aparece d2">Contanos qué estás planeando. Nos encantaría crearlo con vos.</p>
     <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn aparece d3">Escribinos <span aria-hidden="true">→</span></a>
   </div>
   <div class="ct-der">
     <div class="ct-item aparece"><span class="etiqueta">Mail</span><a class="ct-valor" href="mailto:propuestas@classictwist.uy">propuestas@classictwist.uy</a></div>
     <div class="ct-item aparece d1"><span class="etiqueta">Instagram</span><a class="ct-valor" href="https://www.instagram.com/classictwist.uy/" target="_blank" rel="noopener">@classictwist.uy</a></div>
-    <div class="ct-item aparece d3"><span class="etiqueta">Ubicación</span><span class="ct-valor">Montevideo, Uruguay</span></div>
+    <div class="ct-item aparece d3"><span class="etiqueta">Dónde trabajamos</span><span class="ct-valor">Montevideo, Canelones y Maldonado (Punta del Este y José Ignacio)</span></div>
   </div>
 </section>
 
@@ -1571,14 +1588,11 @@ document.querySelectorAll('.pasafotos').forEach(caja => {
   }, Number(caja.dataset.intervalo || 2600));
 });
 
-/* Enlace sin ".html" cuando la web está publicada */
-const enlace = h => location.protocol.startsWith('http') ? h.replace(/^index\.html/, '/').replace(/\.html(?=\?|#|$)/, '') : h;
-
 /* ── Tarjeta de trabajo (galería) ── */
 function tarjetaTrabajo(t) {
   const a = document.createElement('a');
   a.className = 'trabajo';
-  a.href = enlace(`evento.html?e=${t.id}`);
+  a.href = `/evento?e=${t.id}`;
   a.dataset.linea = t.linea;
   a.innerHTML = `
     ${t.video
@@ -1661,15 +1675,6 @@ document.querySelectorAll('.equipo-num').forEach(n => {
     quieto = setTimeout(() => nav.classList.remove('moviendo'), 260);
   }, { passive: true });
 })();
-
-/* ── URLs sin ".html" cuando la web está publicada (en la compu se mantienen para poder verla) ── */
-if (location.protocol.startsWith('http')) {
-  document.querySelectorAll('a[href]').forEach(a => {
-    const h = a.getAttribute('href');
-    if (/^https?:|^mailto:|^#/.test(h) || !/\.html(\?|#|$)/.test(h)) return;
-    a.setAttribute('href', h.replace(/^index\.html/, '/').replace(/\.html(?=\?|#|$)/, ''));
-  });
-}
 
 </script>
 </body>

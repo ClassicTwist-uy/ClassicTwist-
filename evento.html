@@ -1296,23 +1296,28 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 .trabajo video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.9s var(--ease), opacity 0.5s; }
 .trabajo:hover video { transform: scale(1.04); opacity: 0.82; }
 
+/* Variación de acento en la home: algunos detalles en coral (#E35336) */
+.muro-texto .ovalo { --ovalo: var(--coral); }
+.etiqueta.acento-coral { --acento: var(--coral); }
+.scroll-aviso::after { background: var(--coral); }
+
 </style>
 <link rel="icon" href="assets/iconos/puntito_negro.svg" type="image/svg+xml">
 </head>
 <body>
 
 <header class="nav solido fijo">
-  <a href="index.html" class="nav-logo" aria-label="Classic Twist — inicio">
+  <a href="/" class="nav-logo" aria-label="Classic Twist — inicio">
     <img class="logo-claro" src="assets/logo/logo_beige.svg" alt="Classic Twist">
     <img class="logo-oscuro" src="assets/logo/logo_negro.svg" alt="" aria-hidden="true">
   </a>
   <nav aria-label="Principal">
     <ul class="nav-links">
-      <li><a href="eventos-de-marca.html">Eventos de marca</a></li>
-      <li><a href="casamientos.html">Casamientos</a></li>
-      <li><a href="celebraciones.html">Celebraciones</a></li>
-      <li><a href="portfolio.html" class="activo">Portfolio</a></li>
-      <li><a href="equipo.html">Equipo</a></li>
+      <li><a href="/eventos-corporativos">Eventos corporativos</a></li>
+      <li><a href="/casamientos">Casamientos</a></li>
+      <li><a href="/celebraciones">Celebraciones</a></li>
+      <li><a href="/portfolio" class="activo">Portfolio</a></li>
+      <li><a href="/equipo">Equipo</a></li>
       <li><a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="nav-cta">Contacto</a></li>
     </ul>
   </nav>
@@ -1320,12 +1325,12 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 </header>
 
 <div class="menu-movil">
-  <a href="index.html">Inicio</a>
-  <a href="eventos-de-marca.html">Eventos de marca</a>
-  <a href="casamientos.html">Casamientos</a>
-  <a href="celebraciones.html">Celebraciones</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="equipo.html">Nuestro equipo</a>
+  <a href="/">Inicio</a>
+  <a href="/eventos-corporativos">Eventos corporativos</a>
+  <a href="/casamientos">Casamientos</a>
+  <a href="/celebraciones">Celebraciones</a>
+  <a href="/portfolio">Portfolio</a>
+  <a href="/equipo">Nuestro equipo</a>
   <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn">Contacto</a>
   <p class="firma">Dirección creativa aplicada al líquido</p>
 </div>
@@ -1341,7 +1346,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
         <div class="pantonera aparece d2" id="ev-paleta" aria-label="Paleta de colores del evento"></div>
         <p class="cuerpo ev-desc aparece d3" id="ev-desc"></p>
       </div>
-      <a href="portfolio.html" class="link-flecha ev-volver"><span aria-hidden="true">←</span> Volver al portfolio</a>
+      <a href="/portfolio" class="link-flecha ev-volver"><span aria-hidden="true">←</span> Volver al portfolio</a>
     </div>
   </section>
 
@@ -1499,14 +1504,11 @@ document.querySelectorAll('.pasafotos').forEach(caja => {
   }, Number(caja.dataset.intervalo || 2600));
 });
 
-/* Enlace sin ".html" cuando la web está publicada */
-const enlace = h => location.protocol.startsWith('http') ? h.replace(/^index\.html/, '/').replace(/\.html(?=\?|#|$)/, '') : h;
-
 /* ── Tarjeta de trabajo (galería) ── */
 function tarjetaTrabajo(t) {
   const a = document.createElement('a');
   a.className = 'trabajo';
-  a.href = enlace(`evento.html?e=${t.id}`);
+  a.href = `/evento?e=${t.id}`;
   a.dataset.linea = t.linea;
   a.innerHTML = `
     ${t.video
@@ -1590,15 +1592,6 @@ document.querySelectorAll('.equipo-num').forEach(n => {
   }, { passive: true });
 })();
 
-/* ── URLs sin ".html" cuando la web está publicada (en la compu se mantienen para poder verla) ── */
-if (location.protocol.startsWith('http')) {
-  document.querySelectorAll('a[href]').forEach(a => {
-    const h = a.getAttribute('href');
-    if (/^https?:|^mailto:|^#/.test(h) || !/\.html(\?|#|$)/.test(h)) return;
-    a.setAttribute('href', h.replace(/^index\.html/, '/').replace(/\.html(?=\?|#|$)/, ''));
-  });
-}
-
 </script>
 <script>
   const params = new URLSearchParams(location.search);
@@ -1639,7 +1632,7 @@ if (location.protocol.startsWith('http')) {
   const sig = TRABAJOS[(idx + 1) % TRABAJOS.length];
   const aSig = document.getElementById('siguiente');
   aSig.textContent = sig.nombre + (sig.anio ? ' ' + sig.anio : '') + ' →';
-  aSig.href = enlace(`evento.html?e=${sig.id}`);
+  aSig.href = `/evento?e=${sig.id}`;
 
   /* Mosaico */
   const fotos = Array.from({ length: t.fotos }, (_, i) => `galeria/${t.id}/${String(i + 1).padStart(2, '0')}.jpg`);

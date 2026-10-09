@@ -5,7 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio | Classic Twist — Coctelería para eventos en Uruguay</title>
 <meta name="description" content="Trabajos de Classic Twist: lanzamientos, activaciones de marca, eventos corporativos y celebraciones privadas en Uruguay.">
-<link rel="canonical" href="https://classic-twist.vercel.app/portfolio">
+<link rel="canonical" href="https://classictwist.uy/portfolio">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://classictwist.uy/portfolio">
+<meta property="og:title" content="Portfolio | Classic Twist — Coctelería para eventos en Uruguay">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="Classic Twist">
 <meta name="theme-color" content="#F4F1EA">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1297,23 +1302,28 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 .trabajo video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.9s var(--ease), opacity 0.5s; }
 .trabajo:hover video { transform: scale(1.04); opacity: 0.82; }
 
+/* Variación de acento en la home: algunos detalles en coral (#E35336) */
+.muro-texto .ovalo { --ovalo: var(--coral); }
+.etiqueta.acento-coral { --acento: var(--coral); }
+.scroll-aviso::after { background: var(--coral); }
+
 </style>
 <link rel="icon" href="assets/iconos/puntito_negro.svg" type="image/svg+xml">
 </head>
 <body>
 
 <header class="nav solido fijo">
-  <a href="index.html" class="nav-logo" aria-label="Classic Twist — inicio">
+  <a href="/" class="nav-logo" aria-label="Classic Twist — inicio">
     <img class="logo-claro" src="assets/logo/logo_beige.svg" alt="Classic Twist">
     <img class="logo-oscuro" src="assets/logo/logo_negro.svg" alt="" aria-hidden="true">
   </a>
   <nav aria-label="Principal">
     <ul class="nav-links">
-      <li><a href="eventos-de-marca.html">Eventos de marca</a></li>
-      <li><a href="casamientos.html">Casamientos</a></li>
-      <li><a href="celebraciones.html">Celebraciones</a></li>
-      <li><a href="portfolio.html" class="activo">Portfolio</a></li>
-      <li><a href="equipo.html">Equipo</a></li>
+      <li><a href="/eventos-corporativos">Eventos corporativos</a></li>
+      <li><a href="/casamientos">Casamientos</a></li>
+      <li><a href="/celebraciones">Celebraciones</a></li>
+      <li><a href="/portfolio" class="activo">Portfolio</a></li>
+      <li><a href="/equipo">Equipo</a></li>
       <li><a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="nav-cta">Contacto</a></li>
     </ul>
   </nav>
@@ -1321,12 +1331,12 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 </header>
 
 <div class="menu-movil">
-  <a href="index.html">Inicio</a>
-  <a href="eventos-de-marca.html">Eventos de marca</a>
-  <a href="casamientos.html">Casamientos</a>
-  <a href="celebraciones.html">Celebraciones</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="equipo.html">Nuestro equipo</a>
+  <a href="/">Inicio</a>
+  <a href="/eventos-corporativos">Eventos corporativos</a>
+  <a href="/casamientos">Casamientos</a>
+  <a href="/celebraciones">Celebraciones</a>
+  <a href="/portfolio">Portfolio</a>
+  <a href="/equipo">Nuestro equipo</a>
   <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn">Contacto</a>
   <p class="firma">Dirección creativa aplicada al líquido</p>
 </div>
@@ -1339,7 +1349,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     </div>
     <div class="filtros aparece d2" role="group" aria-label="Filtrar trabajos">
       <button class="filtro activo" data-filtro="todos">Todos</button>
-      <button class="filtro" data-filtro="empresarial">Eventos de marca</button>
+      <button class="filtro" data-filtro="empresarial">Eventos corporativos</button>
       <button class="filtro" data-filtro="social">Eventos privados</button>
     </div>
   </div>
@@ -1471,14 +1481,11 @@ document.querySelectorAll('.pasafotos').forEach(caja => {
   }, Number(caja.dataset.intervalo || 2600));
 });
 
-/* Enlace sin ".html" cuando la web está publicada */
-const enlace = h => location.protocol.startsWith('http') ? h.replace(/^index\.html/, '/').replace(/\.html(?=\?|#|$)/, '') : h;
-
 /* ── Tarjeta de trabajo (galería) ── */
 function tarjetaTrabajo(t) {
   const a = document.createElement('a');
   a.className = 'trabajo';
-  a.href = enlace(`evento.html?e=${t.id}`);
+  a.href = `/evento?e=${t.id}`;
   a.dataset.linea = t.linea;
   a.innerHTML = `
     ${t.video
@@ -1561,15 +1568,6 @@ document.querySelectorAll('.equipo-num').forEach(n => {
     quieto = setTimeout(() => nav.classList.remove('moviendo'), 260);
   }, { passive: true });
 })();
-
-/* ── URLs sin ".html" cuando la web está publicada (en la compu se mantienen para poder verla) ── */
-if (location.protocol.startsWith('http')) {
-  document.querySelectorAll('a[href]').forEach(a => {
-    const h = a.getAttribute('href');
-    if (/^https?:|^mailto:|^#/.test(h) || !/\.html(\?|#|$)/.test(h)) return;
-    a.setAttribute('href', h.replace(/^index\.html/, '/').replace(/\.html(?=\?|#|$)/, ''));
-  });
-}
 
 </script>
 <script>
