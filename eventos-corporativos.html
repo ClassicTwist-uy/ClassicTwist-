@@ -1,18 +1,58 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-UY">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eventos corporativos | Classic Twist — Coctelería para lanzamientos, activaciones y eventos corporativos</title>
-<meta name="description" content="Diseñamos la coctelería de tu marca: experiencia líquida, estaciones interactivas y coctelería clásica para lanzamientos, activaciones y eventos corporativos en Uruguay.">
+<title>Coctelería y barra de tragos para eventos corporativos · Classic Twist</title>
+<meta name="description" content="Coctelería clásica, cócteles y mocktails de autor para eventos corporativos, lanzamientos, activaciones y fiestas de fin de año. Con y sin alcohol.">
 <link rel="canonical" href="https://classictwist.uy/eventos-corporativos">
 <meta name="theme-color" content="#F4F1EA">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://classictwist.uy/eventos-corporativos">
-<meta property="og:title" content="Eventos corporativos | Classic Twist — Coctelería para lanzamientos, activaciones y eventos corporativos">
-<meta property="og:description" content="Diseñamos la coctelería de tu marca: experiencia líquida, estaciones interactivas y coctelería clásica para lanzamientos, activaciones y eventos corporativos en Uruguay.">
+<meta property="og:title" content="Coctelería y barra de tragos para eventos corporativos · Classic Twist">
+<meta property="og:description" content="Coctelería clásica, cócteles y mocktails de autor para eventos corporativos, lanzamientos, activaciones y fiestas de fin de año. Con y sin alcohol.">
 <meta property="og:locale" content="es_UY">
 <meta property="og:site_name" content="Classic Twist">
+<meta property="og:image" content="https://classictwist.uy/assets/img/og/og-eventos-corporativos.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Estación interactiva de coctelería en la activación de Vichy">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Coctelería y barra de tragos para eventos corporativos",
+  "serviceType": "Coctelería para eventos corporativos",
+  "description": "Cócteles y mocktails de autor, estaciones interactivas y coctelería clásica para lanzamientos de producto, activaciones de marca, after office y fiestas de fin de año.",
+  "url": "https://classictwist.uy/eventos-corporativos",
+  "image": "https://classictwist.uy/assets/img/og/og-eventos-corporativos.jpg",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Classic Twist",
+    "url": "https://classictwist.uy/",
+    "email": "propuestas@classictwist.uy",
+    "address": { "@type": "PostalAddress", "addressLocality": "Montevideo", "addressCountry": "UY" }
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Montevideo" },
+    { "@type": "AdministrativeArea", "name": "Canelones" },
+    { "@type": "AdministrativeArea", "name": "Maldonado" },
+    { "@type": "City", "name": "Punta del Este" },
+    { "@type": "City", "name": "José Ignacio" }
+  ],
+  "audience": { "@type": "BusinessAudience", "audienceType": "Empresas, marcas, agencias y productoras" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Formatos",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Experiencia líquida", "description": "Cócteles de marca creados a partir de la identidad de cada evento, con alcohol o en versión mocktail." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estación interactiva", "description": "Estación donde los invitados eligen, combinan y completan su propio trago." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Coctelería clásica", "description": "Barra de tragos en modalidad open bar con los clásicos más elegidos." } }
+    ]
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap">
@@ -1309,6 +1349,17 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 .etiqueta.acento-coral { --acento: var(--coral); }
 .scroll-aviso::after { background: var(--coral); }
 
+/* Home: los tres videos quedan solos, sin enlace ni efecto al pasar el mouse */
+.triptico .panel { cursor: default; }
+.triptico:hover .panel, .triptico .panel:hover { flex-grow: 1; }
+.panel:hover video, .panel:hover > img { transform: none; filter: none; }
+
+/* Equipo: foto grande del equipo en la barra */
+.duo-pie--foto { padding-bottom: clamp(28px, 3vw, 44px); }
+.equipo-grupo { margin: 0; padding: 0 var(--pad) clamp(80px, 9vw, 130px); }
+.equipo-grupo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+@media (max-width: 900px) { .equipo-grupo { padding: 0 20px 70px; } }
+
 </style>
 </head>
 <body>
@@ -1348,8 +1399,8 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <div class="hero-sub-texto">
     <span class="etiqueta aparece">Eventos corporativos</span>
     <h1 class="h1 aparece d1">¿Cómo sería <br>tu <span class="ovalo">marca</span> si <br>se pudiera beber?</h1>
-    <p class="firma aparece d2" style="margin-bottom:18px">Lanzamientos · Activaciones · Eventos corporativos</p>
-    <p class="cuerpo aparece d2">No solo somos la barra para tu evento. <strong>Diseñamos la coctelería de tu marca</strong>: tragos y bebidas <strong>con y sin alcohol</strong>, creados a partir de su identidad. Desde ahí tomamos cada decisión: qué se toma, cómo se ve y cómo se sirve.</p>
+    <p class="firma aparece d2" style="margin-bottom:18px">Lanzamientos · Activaciones · Eventos de marca</p>
+    <p class="cuerpo aparece d2">No solo somos la barra de tragos para tu evento. <strong>Diseñamos la coctelería de tu marca</strong>: tragos de autor, <strong>con y sin alcohol</strong>, creados a partir de su identidad. Desde ahí tomamos cada decisión: qué se toma, cómo se ve y cómo se sirve.</p>
     <div class="hero-indice aparece d3"><a href="#servicios">Servicios</a><a href="#trabajos">Trabajos</a></div>
   </div>
   <div class="hero-sub-media">
@@ -1358,14 +1409,14 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   </div>
 </section>
 
-<div class="cinta" aria-hidden="true"><div class="cinta-in"><span>Con y sin alcohol</span><span>Lanzamientos</span><span>Activaciones</span><span>Eventos corporativos</span><span>Fin de año</span><span>Experiencia líquida</span><span>Estación interactiva</span><span>Con y sin alcohol</span><span>Lanzamientos</span><span>Activaciones</span><span>Eventos corporativos</span><span>Fin de año</span><span>Experiencia líquida</span><span>Estación interactiva</span></div></div>
+<div class="cinta" aria-hidden="true"><div class="cinta-in"><span>Con y sin alcohol</span><span>Lanzamientos</span><span>Activaciones</span><span>After office</span><span>Eventos corporativos</span><span>Fin de año</span><span>Experiencia líquida</span><span>Estación interactiva</span><span>Con y sin alcohol</span><span>Lanzamientos</span><span>Activaciones</span><span>After office</span><span>Eventos corporativos</span><span>Fin de año</span><span>Experiencia líquida</span><span>Estación interactiva</span></div></div>
 
 <div class="seccion-cabeza" id="servicios">
   <div>
-    <span class="etiqueta aparece">Servicios</span>
-    <h2 class="h2 aparece d1">Tres formas de <br>aplicar el <span class="ovalo">líquido</span></h2>
+    <h2 class="etiqueta aparece">Coctelería para eventos corporativos</h2>
+    <p class="h2 aparece d1">Tres formas de <br>aplicar el <span class="ovalo">líquido</span></p>
   </div>
-  <p class="cuerpo aparece d2">Todas las propuestas incluyen personal (bartenders, asistentes y referente), cristalería, hielo estándar y cristalino, traslados y todo lo necesario para la realización del servicio. Como complemento, sumamos el estilismo del equipo según el concepto de la marca.</p>
+  <p class="cuerpo aparece d2">Trabajamos con empresas, marcas, agencias y productoras. Todas las propuestas incluyen personal (bartenders, asistentes y referente), cristalería, hielo estándar y cristalino, traslados y todo lo necesario para la realización del servicio. Como complemento, sumamos el estilismo del equipo según el concepto de la marca.</p>
 </div>
 <div class="servicios-grid">
   <article class="servicio-card aparece">
@@ -1375,7 +1426,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     </div>
     <div class="servicio-card-media " data-intervalo="2200"><video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/experiencia-liquida.jpg" src="videos/experiencia-liquida.mp4"></video></div>
     <div class="servicio-card-texto">
-      <p class="cuerpo"><strong>Coctelería a medida, creada a partir de la identidad y el universo de cada evento.</strong> Diseñamos sabores, texturas, aromas, estética, puesta en escena y servicio como parte de una misma narrativa, con o sin alcohol.</p>
+      <p class="cuerpo"><strong>Coctelería a medida, creada a partir de la identidad y el universo de cada evento.</strong> Creamos cócteles de marca: sabores, texturas, aromas, estética, puesta en escena y servicio como parte de una misma narrativa, con alcohol o en versión mocktail.</p>
     </div>
   </article>
 
@@ -1384,9 +1435,9 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
       <div class="servicio-num">02</div>
       <h3 class="h3">Estación interactiva</h3>
     </div>
-    <div class="servicio-card-media pasafotos" data-intervalo="2200"><img src="galeria/vichy2026/03.jpg" alt="Mesa interactiva en la activación de Vichy 2026" loading="lazy"><img src="galeria/vichy2026/01.jpg" alt="Mesa interactiva en la activación de Vichy 2026" loading="lazy"><img src="galeria/vichy2026/04.jpg" alt="Mesa interactiva en la activación de Vichy 2026" loading="lazy"><img src="galeria/vichy2026/05.jpg" alt="Mesa interactiva en la activación de Vichy 2026" loading="lazy"><img src="galeria/vichy2026/02.jpg" alt="Mesa interactiva en la activación de Vichy 2026" loading="lazy"></div>
+    <div class="servicio-card-media pasafotos" data-intervalo="2200"><img src="galeria/vichy2026/03.jpg" alt="Bartender atendiendo la estación interactiva de Vichy, con invitadas armando su trago" loading="lazy"><img src="galeria/vichy2026/01.jpg" alt="Trago terminado con atomizador en la estación interactiva de Vichy" loading="lazy"><img src="galeria/vichy2026/04.jpg" alt="Invitada completando su trago con gotero en la estación interactiva de Vichy" loading="lazy"><img src="galeria/vichy2026/05.jpg" alt="Invitado perfumando su trago con atomizador en la activación de Vichy" loading="lazy"><img src="galeria/vichy2026/02.jpg" alt="Trago de autor con gotero rojo en la bandeja de la activación de Vichy" loading="lazy"></div>
     <div class="servicio-card-texto">
-      <p class="cuerpo">Los invitados dejan de ser espectadores para convertirse en parte de la experiencia. <strong>Eligen, combinan y completan su propio trago</strong>, con ingredientes, aromas, texturas o maridajes que dialogan con el concepto del evento.</p>
+      <p class="cuerpo">Ideal para activaciones de marca: los invitados dejan de ser espectadores para convertirse en parte de la experiencia. <strong>Eligen, combinan y completan su propio trago</strong>, con ingredientes, aromas, texturas o maridajes que dialogan con el concepto del evento.</p>
     </div>
   </article>
 
@@ -1397,7 +1448,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     </div>
     <div class="servicio-card-media " data-intervalo="2200"><img src="assets/img/celebraciones/DSC00960.jpg" alt="Trago clásico servido en barra" loading="lazy"></div>
     <div class="servicio-card-texto">
-      <p class="cuerpo">Coctelería en modalidad <em>open bar</em>, con una <strong>selección de los tragos más reconocidos y elegidos</strong>. Un equipo profesional cuidando la calidad, la presentación y el servicio en cada copa.</p>
+      <p class="cuerpo">Barra de tragos en modalidad <em>open bar</em>, con una <strong>selección de los tragos más reconocidos y elegidos</strong>. Un equipo profesional cuidando la calidad, la presentación y el servicio en cada copa.</p>
     </div>
   </article>
 
@@ -1415,49 +1466,15 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 <div class="seccion-cabeza" id="trabajos">
   <div>
     <span class="etiqueta aparece">Trabajos</span>
-    <h2 class="h2 aparece d1">Marcas con las que <br>diseñamos</h2>
+    <h2 class="h2 aparece d1">Marcas con las que <br>hemos diseñado</h2>
   </div>
-  <p class="cuerpo aparece d2">Lanzamientos, activaciones y eventos corporativos donde la coctelería fue parte del concepto.</p>
+  <p class="cuerpo aparece d2">Stella McCartney × H&amp;M, Vichy, Toyota, Lancôme, Exat y Fixed: lanzamientos de producto, activaciones de marca, after office y fiestas de fin de año donde la coctelería fue parte del concepto.</p>
 </div>
 <div class="galeria-grid" data-linea="empresarial" data-cantidad="6"></div>
 <div class="galeria-pie">
   <span class="firma">Dirección creativa aplicada al líquido</span>
   <a href="/portfolio" class="link-flecha">Ver todo el portfolio <span aria-hidden="true">→</span></a>
 </div>
-
-<section class="conoce" aria-label="Conocé más">
-  <div class="conoce-cabeza">
-    <div>
-      <span class="etiqueta aparece">Conocé más</span>
-      <h2 class="h2 aparece d1">Todo lo que <br>hacemos con el <span class="ovalo">líquido</span></h2>
-    </div>
-    <nav class="conoce-links aparece d2" aria-label="Más de Classic Twist">
-      <a href="/">Inicio <span aria-hidden="true">→</span></a>
-      <a href="/portfolio">Portfolio <span aria-hidden="true">→</span></a>
-      <a href="/equipo">Equipo <span aria-hidden="true">→</span></a>
-    </nav>
-  </div>
-  <nav class="servicios-tres" aria-label="Otros servicios">
-  <a class="servicio-link" href="/casamientos">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento.jpg" src="videos/casamiento.mp4"></video>
-    <span class="servicio-link-num">01</span>
-    <div><div class="servicio-link-nombre">Casamientos</div></div>
-    <div class="servicio-link-pie"><span>Tragos únicos como su historia de amor.</span><span aria-hidden="true">→</span></div>
-  </a>
-  <a class="servicio-link" href="/celebraciones">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video>
-    <span class="servicio-link-num">02</span>
-    <div><div class="servicio-link-nombre">Celebraciones privadas</div></div>
-    <div class="servicio-link-pie"><span>Cumpleaños, aniversarios, reuniones y fiestas.</span><span aria-hidden="true">→</span></div>
-  </a>
-  <a class="servicio-link" href="/">
-    <img src="galeria/hym2026/01.jpg" alt="" loading="lazy">
-    <span class="servicio-link-num">Classic Twist</span>
-    <div><div class="servicio-link-nombre">Conocé el estudio</div></div>
-    <div class="servicio-link-pie"><span>Quiénes somos, nuestros servicios y trabajos.</span><span aria-hidden="true">→</span></div>
-  </a>
-  </nav>
-</section>
 
 <section class="contacto-split" id="contacto">
   <div class="ct-izq">
@@ -1469,7 +1486,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <div class="ct-der">
     <div class="ct-item aparece"><span class="etiqueta">Mail</span><a class="ct-valor" href="mailto:propuestas@classictwist.uy">propuestas@classictwist.uy</a></div>
     <div class="ct-item aparece d1"><span class="etiqueta">Instagram</span><a class="ct-valor" href="https://www.instagram.com/classictwist.uy/" target="_blank" rel="noopener">@classictwist.uy</a></div>
-    <div class="ct-item aparece d3"><span class="etiqueta">Ubicación</span><span class="ct-valor">Montevideo, Uruguay</span></div>
+    <div class="ct-item aparece d3"><span class="etiqueta">Dónde trabajamos</span><span class="ct-valor">Montevideo, Canelones y Maldonado (Punta del Este y José Ignacio)</span></div>
   </div>
 </section>
 
@@ -1687,6 +1704,18 @@ document.querySelectorAll('.equipo-num').forEach(n => {
     quieto = setTimeout(() => nav.classList.remove('moviendo'), 260);
   }, { passive: true });
 })();
+
+/* ── Vista local (abriendo los archivos en la compu): los enlaces "/pagina" llevan a "pagina.html" ── */
+if (location.protocol === 'file:') {
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="/"]');
+    if (!a) return;
+    const [ruta, resto = ''] = a.getAttribute('href').split(/(?=[?#])/);
+    const archivo = ruta === '/' ? 'index.html' : ruta.slice(1) + '.html';
+    e.preventDefault();
+    location.href = archivo + resto;
+  });
+}
 
 </script>
 <script>

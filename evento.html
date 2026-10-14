@@ -1301,6 +1301,17 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 .etiqueta.acento-coral { --acento: var(--coral); }
 .scroll-aviso::after { background: var(--coral); }
 
+/* Home: los tres videos quedan solos, sin enlace ni efecto al pasar el mouse */
+.triptico .panel { cursor: default; }
+.triptico:hover .panel, .triptico .panel:hover { flex-grow: 1; }
+.panel:hover video, .panel:hover > img { transform: none; filter: none; }
+
+/* Equipo: foto grande del equipo en la barra */
+.duo-pie--foto { padding-bottom: clamp(28px, 3vw, 44px); }
+.equipo-grupo { margin: 0; padding: 0 var(--pad) clamp(80px, 9vw, 130px); }
+.equipo-grupo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+@media (max-width: 900px) { .equipo-grupo { padding: 0 20px 70px; } }
+
 </style>
 <link rel="icon" href="assets/iconos/puntito_negro.svg" type="image/svg+xml">
 </head>
@@ -1591,6 +1602,18 @@ document.querySelectorAll('.equipo-num').forEach(n => {
     quieto = setTimeout(() => nav.classList.remove('moviendo'), 260);
   }, { passive: true });
 })();
+
+/* ── Vista local (abriendo los archivos en la compu): los enlaces "/pagina" llevan a "pagina.html" ── */
+if (location.protocol === 'file:') {
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="/"]');
+    if (!a) return;
+    const [ruta, resto = ''] = a.getAttribute('href').split(/(?=[?#])/);
+    const archivo = ruta === '/' ? 'index.html' : ruta.slice(1) + '.html';
+    e.preventDefault();
+    location.href = archivo + resto;
+  });
+}
 
 </script>
 <script>

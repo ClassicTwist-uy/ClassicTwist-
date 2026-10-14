@@ -1,18 +1,97 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-UY">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Casamientos | Classic Twist — Barra de tragos y coctelería de autor para bodas en Uruguay</title>
-<meta name="description" content="Tragos únicos como su historia de amor: mesa de bienvenida, tragos de autor y coctelería clásica para casamientos en Uruguay.">
+<title>Barra de tragos para casamientos en Uruguay · Classic Twist</title>
+<meta name="description" content="Tragos de autor personalizados, mesa de bienvenida y barra libre para casamientos en Montevideo, Punta del Este y José Ignacio. Con y sin alcohol.">
 <link rel="canonical" href="https://classictwist.uy/casamientos">
 <meta name="theme-color" content="#F4F1EA">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://classictwist.uy/casamientos">
-<meta property="og:title" content="Casamientos | Classic Twist — Barra de tragos y coctelería de autor para bodas en Uruguay">
-<meta property="og:description" content="Tragos únicos como su historia de amor: mesa de bienvenida, tragos de autor y coctelería clásica para casamientos en Uruguay.">
+<meta property="og:title" content="Barra de tragos para casamientos en Uruguay · Classic Twist">
+<meta property="og:description" content="Tragos de autor personalizados, mesa de bienvenida y barra libre para casamientos en Montevideo, Punta del Este y José Ignacio. Con y sin alcohol.">
 <meta property="og:locale" content="es_UY">
 <meta property="og:site_name" content="Classic Twist">
+<meta property="og:image" content="https://classictwist.uy/assets/img/og/og-casamientos.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tragos de autor sobre la barra de un casamiento">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Barra de tragos para casamientos",
+  "serviceType": "Coctelería para casamientos",
+  "description": "Tragos de autor personalizados, mesa de bienvenida y barra libre de coctelería clásica para casamientos, con y sin alcohol.",
+  "url": "https://classictwist.uy/casamientos",
+  "image": "https://classictwist.uy/assets/img/og/og-casamientos.jpg",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Classic Twist",
+    "url": "https://classictwist.uy/",
+    "email": "propuestas@classictwist.uy",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montevideo",
+      "addressCountry": "UY"
+    }
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Montevideo"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Canelones"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Maldonado"
+    },
+    {
+      "@type": "City",
+      "name": "Punta del Este"
+    },
+    {
+      "@type": "City",
+      "name": "José Ignacio"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Propuesta para casamientos",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mesa de bienvenida",
+          "description": "Trago de bienvenida diseñado para el casamiento, presentado por ejemplo en latas personalizadas con los nombres y la fecha."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Tragos de autor",
+          "description": "Tragos personalizados para la pareja, también en versión sin alcohol."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Coctelería clásica",
+          "description": "Barra libre con los clásicos más elegidos durante toda la celebración."
+        }
+      }
+    ]
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap">
@@ -1309,6 +1388,17 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 .etiqueta.acento-coral { --acento: var(--coral); }
 .scroll-aviso::after { background: var(--coral); }
 
+/* Home: los tres videos quedan solos, sin enlace ni efecto al pasar el mouse */
+.triptico .panel { cursor: default; }
+.triptico:hover .panel, .triptico .panel:hover { flex-grow: 1; }
+.panel:hover video, .panel:hover > img { transform: none; filter: none; }
+
+/* Equipo: foto grande del equipo en la barra */
+.duo-pie--foto { padding-bottom: clamp(28px, 3vw, 44px); }
+.equipo-grupo { margin: 0; padding: 0 var(--pad) clamp(80px, 9vw, 130px); }
+.equipo-grupo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+@media (max-width: 900px) { .equipo-grupo { padding: 0 20px 70px; } }
+
 </style>
 </head>
 <body class="t-social t-beige">
@@ -1348,13 +1438,13 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <div class="hero-sub-texto">
     <span class="etiqueta aparece">Casamientos</span>
     <h1 class="h1 aparece d1">Tragos únicos <br>como su <br><span class="ovalo">historia</span> de amor</h1>
-    <p class="cuerpo aparece d2">No solo somos la barra para su casamiento. <strong>Diseñamos la coctelería de su gran noche.</strong></p>
+    <p class="cuerpo aparece d2">No solo somos la barra de tragos de su casamiento. <strong>Diseñamos la coctelería de su gran noche.</strong></p>
     <div class="hero-indice aparece d3"><a href="#como">Cómo trabajamos</a><a href="#propuesta">Propuesta</a><a href="#carta">Carta</a></div>
   </div>
   <div class="hero-sub-media"><img src="galeria/hym2026/06.jpg" alt="Trago en la mano sobre fondo verde" loading="lazy"></div>
 </section>
 
-<div class="t-social"><div class="cinta" aria-hidden="true"><div class="cinta-in"><span>Mesa de bienvenida</span><span>Tragos de autor</span><span>Coctelería clásica</span><span>Hielo cristalino</span><span>Barra integrada</span><span>Con o sin alcohol</span><span>Mesa de bienvenida</span><span>Tragos de autor</span><span>Coctelería clásica</span><span>Hielo cristalino</span><span>Barra integrada</span><span>Con o sin alcohol</span></div></div>
+<div class="t-social"><div class="cinta" aria-hidden="true"><div class="cinta-in"><span>Mesa de bienvenida</span><span>Tragos de autor</span><span>Coctelería clásica</span><span>Barra integrada</span><span>Con o sin alcohol</span><span>Mesa de bienvenida</span><span>Tragos de autor</span><span>Coctelería clásica</span><span>Barra integrada</span><span>Con o sin alcohol</span></div></div>
 </div>
 <section class="partido partido--60 t-social" id="como">
   <div class="partido-texto">
@@ -1372,10 +1462,10 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 
 <div class="seccion-cabeza t-social" id="propuesta">
   <div>
-    <span class="etiqueta aparece">Propuesta</span>
-    <h2 class="h2 aparece d1">Una barra pensada <br>para su gran noche</h2>
+    <h2 class="etiqueta aparece">Barra de tragos para casamientos</h2>
+    <p class="h2 aparece d1">Una barra pensada <br>para su gran noche</p>
   </div>
-  <p class="cuerpo aparece d2">Todas las propuestas incluyen personal (bartenders, asistentes y referente), cristalería, hielo estándar y cristalino, traslados y todo lo necesario para la realización del servicio.</p>
+  <p class="cuerpo aparece d2">Todas las propuestas incluyen personal (bartenders, asistentes y referente), cristalería, hielo, traslados y todo lo necesario para la realización del servicio.</p>
 </div>
 <div class="servicios-grid t-social">
   <article class="servicio-card aparece">
@@ -1385,7 +1475,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     </div>
     <div class="servicio-card-media " data-intervalo="2200"><img src="assets/img/celebraciones/DSC00837.jpg" alt="Barra en un casamiento al aire libre" loading="lazy"></div>
     <div class="servicio-card-texto">
-      <p class="cuerpo">Una mesa de recepción con una bebida especialmente diseñada para el casamiento, presentada en latas transparentes personalizadas con sus nombres y la fecha.</p>
+      <p class="cuerpo">Una mesa de recepción con un trago de bienvenida diseñado especialmente para el casamiento, presentada por ejemplo, en latas transparentes personalizadas con sus nombres y la fecha.</p>
     </div>
   </article>
 
@@ -1396,7 +1486,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     </div>
     <div class="servicio-card-media " data-intervalo="2200"><img src="assets/img/celebraciones/DSC01003.jpg" alt="Bartender preparando un trago de autor" loading="lazy"></div>
     <div class="servicio-card-texto">
-      <p class="cuerpo">Tragos únicos como su historia, creados para su día o elegidos entre fórmulas ya probadas. Disponibles también en versión sin alcohol.</p>
+      <p class="cuerpo">Tragos personalizados, únicos como su historia: creados para su día o elegidos entre fórmulas ya probadas. Disponibles también en versión sin alcohol.</p>
     </div>
   </article>
 
@@ -1407,7 +1497,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     </div>
     <div class="servicio-card-media " data-intervalo="2200"><img src="assets/img/celebraciones/DSC00960.jpg" alt="Trago clásico en barra" loading="lazy"></div>
     <div class="servicio-card-texto">
-      <p class="cuerpo">Open bar con los tragos más reconocidos y elegidos, preparados por un equipo profesional durante toda la celebración.</p>
+      <p class="cuerpo">Barra libre con los tragos más reconocidos y elegidos, preparados por bartenders profesionales durante toda la celebración.</p>
     </div>
   </article>
 
@@ -1446,55 +1536,21 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     <span class="etiqueta aparece">En fotos</span>
     <h2 class="h2 aparece d1">Así se vive <br>la barra</h2>
   </div>
-  <p class="cuerpo aparece d2">Casamiento en jardín: guirnaldas de luces, mesa de bienvenida y barra integrada a la celebración. <a href="/evento?e=boda" class="link-flecha" style="margin-top:14px">Ver todas las fotos <span aria-hidden="true">→</span></a></p>
+  <p class="cuerpo aparece d2">Adaptamos la barra de tragos a casamientos en estancias, chacras, salones y al aire libre, en Montevideo, Canelones, Punta del Este y José Ignacio. Coordinamos con la wedding planner para que la coctelería acompañe toda la noche, desde el trago de bienvenida hasta el último brindis. <a href="/evento?e=boda" class="link-flecha" style="margin-top:14px">Ver todas las fotos <span aria-hidden="true">→</span></a></p>
 </div>
-<div class="tira tira--fotos"><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/06.jpg" alt="Casamiento — Classic Twist" loading="lazy"></a><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/07.jpg" alt="Casamiento — Classic Twist" loading="lazy"></a><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/08.jpg" alt="Casamiento — Classic Twist" loading="lazy"></a><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/09.jpg" alt="Casamiento — Classic Twist" loading="lazy"></a><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/10.jpg" alt="Casamiento — Classic Twist" loading="lazy"></a></div>
-
-<section class="conoce" aria-label="Conocé más">
-  <div class="conoce-cabeza">
-    <div>
-      <span class="etiqueta aparece">Conocé más</span>
-      <h2 class="h2 aparece d1">Todo lo que <br>hacemos con el <span class="ovalo">líquido</span></h2>
-    </div>
-    <nav class="conoce-links aparece d2" aria-label="Más de Classic Twist">
-      <a href="/">Inicio <span aria-hidden="true">→</span></a>
-      <a href="/portfolio">Portfolio <span aria-hidden="true">→</span></a>
-      <a href="/equipo">Equipo <span aria-hidden="true">→</span></a>
-    </nav>
-  </div>
-  <nav class="servicios-tres" aria-label="Otros servicios">
-  <a class="servicio-link" href="/eventos-corporativos">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/hym-v2.jpg" src="videos/hym-v2.mp4"></video>
-    <span class="servicio-link-num">01</span>
-    <div><div class="servicio-link-nombre">Eventos corporativos</div></div>
-    <div class="servicio-link-pie"><span>Lanzamientos, activaciones, eventos de marca y fiestas de fin de año.</span><span aria-hidden="true">→</span></div>
-  </a>
-  <a class="servicio-link" href="/celebraciones">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video>
-    <span class="servicio-link-num">02</span>
-    <div><div class="servicio-link-nombre">Celebraciones privadas</div></div>
-    <div class="servicio-link-pie"><span>Cumpleaños, aniversarios, reuniones y fiestas.</span><span aria-hidden="true">→</span></div>
-  </a>
-  <a class="servicio-link" href="/">
-    <img src="galeria/hym2026/01.jpg" alt="" loading="lazy">
-    <span class="servicio-link-num">Classic Twist</span>
-    <div><div class="servicio-link-nombre">Conocé el estudio</div></div>
-    <div class="servicio-link-pie"><span>Quiénes somos, nuestros servicios y trabajos.</span><span aria-hidden="true">→</span></div>
-  </a>
-  </nav>
-</section>
+<div class="tira tira--fotos"><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/06.jpg" alt="Tragos de autor con naranja sobre la barra de un casamiento" loading="lazy"></a><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/07.jpg" alt="Bartender de Classic Twist sirviendo tragos en un casamiento" loading="lazy"></a><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/08.jpg" alt="Bartenders de Classic Twist junto a la barra de un casamiento al aire libre" loading="lazy"></a><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/05.jpg" alt="Bartender de Classic Twist con un trago de autor en un casamiento" loading="lazy"></a><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/10.jpg" alt="Bartender preparando un trago de autor en la barra de un casamiento" loading="lazy"></a></div>
 
 <section class="contacto-split" id="contacto">
   <div class="ct-izq">
     <span class="etiqueta aparece">Hablemos</span>
-    <h2 class="h2 aparece d1">Tu próximo evento <br>empieza con <br>una <span class="ovalo">idea.</span></h2>
+    <h2 class="h2 aparece d1">Su gran noche <br>empieza con <br>una <span class="ovalo">idea.</span></h2>
     <p class="ct-sub aparece d2">Contanos qué estás planeando. Nos encantaría crearlo con vos.</p>
     <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn aparece d3">Escribinos <span aria-hidden="true">→</span></a>
   </div>
   <div class="ct-der">
     <div class="ct-item aparece"><span class="etiqueta">Mail</span><a class="ct-valor" href="mailto:propuestas@classictwist.uy">propuestas@classictwist.uy</a></div>
     <div class="ct-item aparece d1"><span class="etiqueta">Instagram</span><a class="ct-valor" href="https://www.instagram.com/classictwist.uy/" target="_blank" rel="noopener">@classictwist.uy</a></div>
-    <div class="ct-item aparece d3"><span class="etiqueta">Ubicación</span><span class="ct-valor">Montevideo, Uruguay</span></div>
+    <div class="ct-item aparece d3"><span class="etiqueta">Dónde trabajamos</span><span class="ct-valor">Montevideo, Canelones y Maldonado (Punta del Este y José Ignacio)</span></div>
   </div>
 </section>
 
@@ -1712,6 +1768,18 @@ document.querySelectorAll('.equipo-num').forEach(n => {
     quieto = setTimeout(() => nav.classList.remove('moviendo'), 260);
   }, { passive: true });
 })();
+
+/* ── Vista local (abriendo los archivos en la compu): los enlaces "/pagina" llevan a "pagina.html" ── */
+if (location.protocol === 'file:') {
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="/"]');
+    if (!a) return;
+    const [ruta, resto = ''] = a.getAttribute('href').split(/(?=[?#])/);
+    const archivo = ruta === '/' ? 'index.html' : ruta.slice(1) + '.html';
+    e.preventDefault();
+    location.href = archivo + resto;
+  });
+}
 
 </script>
 </body>
