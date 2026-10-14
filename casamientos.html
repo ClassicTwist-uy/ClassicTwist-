@@ -1394,10 +1394,12 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 .panel:hover video, .panel:hover > img { transform: none; filter: none; }
 
 /* Equipo: foto grande del equipo en la barra */
-.duo-pie--foto { padding-bottom: clamp(28px, 3vw, 44px); }
-.equipo-grupo { margin: 0; padding: 0 var(--pad) clamp(80px, 9vw, 130px); }
+/* Equipo: foto del grupo chica con el párrafo al costado */
+.equipo-bloque { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 4vw, 70px); align-items: center; padding: clamp(50px, 6vw, 90px) var(--pad) clamp(80px, 9vw, 130px); }
+.equipo-bloque .duo-pie--foto { padding: 0; margin: 0; max-width: 52ch; }
+.equipo-grupo { margin: 0; padding: 0; }
 .equipo-grupo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
-@media (max-width: 900px) { .equipo-grupo { padding: 0 20px 70px; } }
+@media (max-width: 900px) { .equipo-bloque { grid-template-columns: 1fr; gap: 28px; padding: 50px 20px 70px; } }
 
 </style>
 </head>
@@ -1457,7 +1459,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
       <div><div class="paso-num">03</div><div class="paso-tit">Lo servimos</div><p class="paso-txt">Mesa de bienvenida y barra integrada a la celebración, con un servicio fluido toda la noche.</p></div>
     </div>
   </div>
-  <div class="partido-media"><video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento.jpg" src="videos/casamiento.mp4"></video></div>
+  <div class="partido-media"><video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento-1.jpg" src="videos/casamiento-1.mp4"></video></div>
 </section>
 
 <div class="seccion-cabeza t-social" id="propuesta">
@@ -1509,7 +1511,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     <h2 class="h1 aparece d1">Su historia en la <span class="ovalo">mano</span> de cada invitado</h2>
     
   </div>
-  <div class="banda-media"><video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento.jpg" src="videos/casamiento.mp4"></video></div>
+  <div class="banda-media"><video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento-2.jpg" src="videos/casamiento-2.mp4"></video></div>
 </section>
 
 <section class="partido partido--40 t-social partido--media-primero-movil" id="carta">

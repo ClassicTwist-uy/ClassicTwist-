@@ -1,18 +1,61 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-UY">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El equipo detrás de Classic Twist</title>
-<meta name="description" content="El equipo de Classic Twist: Natasha Gonzalez, fundadora y directora creativa, y Paola de Brun, bar manager.">
+<title>Equipo de bartenders y dirección creativa · Classic Twist</title>
+<meta name="description" content="Conocé al equipo de Classic Twist: dirección creativa, bar manager y bartenders profesionales para eventos corporativos, casamientos y celebraciones.">
 <link rel="canonical" href="https://classictwist.uy/equipo">
 <meta name="theme-color" content="#F4F1EA">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://classictwist.uy/equipo">
-<meta property="og:title" content="El equipo detrás de Classic Twist">
-<meta property="og:description" content="El equipo de Classic Twist: Natasha Gonzalez, fundadora y directora creativa, y Paola de Brun, bar manager.">
+<meta property="og:title" content="Equipo de bartenders y dirección creativa · Classic Twist">
+<meta property="og:description" content="Conocé al equipo de Classic Twist: dirección creativa, bar manager y bartenders profesionales para eventos corporativos, casamientos y celebraciones.">
 <meta property="og:locale" content="es_UY">
 <meta property="og:site_name" content="Classic Twist">
+<meta property="og:image" content="https://classictwist.uy/assets/img/og/og-equipo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Equipo de Classic Twist en la barra">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Equipo de bartenders y dirección creativa · Classic Twist",
+  "url": "https://classictwist.uy/equipo",
+  "about": {
+    "@type": "LocalBusiness",
+    "name": "Classic Twist",
+    "url": "https://classictwist.uy/",
+    "email": "propuestas@classictwist.uy",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montevideo",
+      "addressCountry": "UY"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Natasha Gonzalez",
+      "jobTitle": "Fundadora y directora creativa"
+    },
+    "employee": [
+      {
+        "@type": "Person",
+        "name": "Natasha Gonzalez",
+        "jobTitle": "Fundadora y directora creativa",
+        "image": "https://classictwist.uy/assets/img/equipo/natasha.jpg"
+      },
+      {
+        "@type": "Person",
+        "name": "Paola de Brun",
+        "jobTitle": "Bar manager",
+        "image": "https://classictwist.uy/assets/img/equipo/paola.jpg"
+      }
+    ]
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap">
@@ -1315,10 +1358,12 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 .panel:hover video, .panel:hover > img { transform: none; filter: none; }
 
 /* Equipo: foto grande del equipo en la barra */
-.duo-pie--foto { padding-bottom: clamp(28px, 3vw, 44px); }
-.equipo-grupo { margin: 0; padding: 0 var(--pad) clamp(80px, 9vw, 130px); }
+/* Equipo: foto del grupo chica con el párrafo al costado */
+.equipo-bloque { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 4vw, 70px); align-items: center; padding: clamp(50px, 6vw, 90px) var(--pad) clamp(80px, 9vw, 130px); }
+.equipo-bloque .duo-pie--foto { padding: 0; margin: 0; max-width: 52ch; }
+.equipo-grupo { margin: 0; padding: 0; }
 .equipo-grupo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
-@media (max-width: 900px) { .equipo-grupo { padding: 0 20px 70px; } }
+@media (max-width: 900px) { .equipo-bloque { grid-template-columns: 1fr; gap: 28px; padding: 50px 20px 70px; } }
 
 </style>
 </head>
@@ -1365,20 +1410,22 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     <div class="persona-img"><img src="assets/img/equipo/natasha.jpg" alt="Natasha Gonzalez, fundadora de Classic Twist" loading="lazy"></div>
     <div class="persona-info">
     <div class="persona-cab"><span class="eq-n">1</span><div><h2 class="eq-nombre">Natasha Gonzalez</h2><p class="eq-rol">Fundadora · Dirección creativa</p></div></div>
-    <p class="cuerpo">Diseñadora industrial, con más de 12 años en gastronomía y trayectoria como productora de eventos y proyectos audiovisuales. En Classic Twist lleva la dirección creativa: le interesa que cada trago tenga un porqué y que la barra cuente lo mismo que el evento.</p>
+    <p class="cuerpo">Diseñadora industrial, con más de 12 años en gastronomía y trayectoria como productora de eventos y proyectos audiovisuales. Ese recorrido entre el diseño, la gastronomía y la producción le da una mirada integral de todo lo que un evento necesita para funcionar: el concepto, la carta, la puesta en escena y la operación. En Classic Twist, esa mirada guía cada propuesta, desde la primera idea hasta la última copa.</p>
     </div>
   </article>
   <article class="persona aparece d1">
     <div class="persona-img"><img src="assets/img/equipo/paola.jpg" alt="Paola de Brun, bar manager de Classic Twist" loading="lazy"></div>
     <div class="persona-info">
     <div class="persona-cab"><span class="eq-n">2</span><div><h2 class="eq-nombre">Paola de Brun</h2><p class="eq-rol">Bar Manager</p></div></div>
-    <p class="cuerpo">Hace más de una década que trabaja detrás de la barra. Se formó en La Huella y en Negroni, fue Head Bar Manager de Hyatt Centric y creó cartas de autor para Amorín y Cebollatí 1326. Es parte de Baroque, bar nómade, y trabajó en Puerto Escondido (México) y Pipa (Brasil). Entiende la coctelería como expresión artística: le gusta lo espontáneo, el agasajo y sorprender.</p>
+    <p class="cuerpo">Más de diez años de oficio detrás de la barra, en importantes locales gastronómicos de Uruguay y del exterior. Creó cartas de autor, lideró equipos de barra y hoy también dicta talleres de coctelería. Entiende la coctelería como expresión artística: le gusta lo espontáneo, el agasajo y sorprender.</p>
     </div>
   </article>
 </section>
 
-<p class="duo-pie duo-pie--foto cuerpo aparece">En cada evento nos acompaña un equipo de bartenders, asistentes y un referente de principio a fin.</p>
+<div class="equipo-bloque">
 <figure class="equipo-grupo aparece"><img src="assets/img/equipo/equipo-barra.jpg" alt="Equipo de Classic Twist con batas blancas en la barra de la activación de Vichy" loading="lazy"></figure>
+<p class="duo-pie duo-pie--foto cuerpo aparece">Detrás de cada barra hay un equipo. En cada evento nos acompañan bartenders profesionales, asistentes y un referente que coordina el servicio de principio a fin y es el contacto directo durante toda la noche, ya sea con vos, con la wedding planner o con la productora.<br><br>Trabajamos con el mismo cuidado en un casamiento, un lanzamiento de marca o un cumpleaños: un servicio profesional y ágil.</p>
+</div>
 
 <section class="contacto-split" id="contacto">
   <div class="ct-izq">
@@ -1390,7 +1437,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <div class="ct-der">
     <div class="ct-item aparece"><span class="etiqueta">Mail</span><a class="ct-valor" href="mailto:propuestas@classictwist.uy">propuestas@classictwist.uy</a></div>
     <div class="ct-item aparece d1"><span class="etiqueta">Instagram</span><a class="ct-valor" href="https://www.instagram.com/classictwist.uy/" target="_blank" rel="noopener">@classictwist.uy</a></div>
-    <div class="ct-item aparece d3"><span class="etiqueta">Ubicación</span><span class="ct-valor">Montevideo, Uruguay</span></div>
+    <div class="ct-item aparece d3"><span class="etiqueta">Dónde trabajamos</span><span class="ct-valor">Montevideo, Canelones y Maldonado (Punta del Este y José Ignacio)</span></div>
   </div>
 </section>
 

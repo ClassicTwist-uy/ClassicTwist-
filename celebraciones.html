@@ -1,18 +1,97 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-UY">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Celebraciones privadas | Classic Twist — Barra de tragos para cumpleaños, aniversarios y fiestas</title>
-<meta name="description" content="Barra de tragos y coctelería de autor para cumpleaños, aniversarios, reuniones y fiestas privadas en Uruguay.">
+<title>Barra de tragos para cumpleaños y fiestas · Classic Twist</title>
+<meta name="description" content="Barra de tragos y tragos de autor para cumpleaños, aniversarios y fiestas privadas en Montevideo, Canelones y Punta del Este. Con y sin alcohol.">
 <link rel="canonical" href="https://classictwist.uy/celebraciones">
 <meta name="theme-color" content="#F4F1EA">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://classictwist.uy/celebraciones">
-<meta property="og:title" content="Celebraciones privadas | Classic Twist — Barra de tragos para cumpleaños, aniversarios y fiestas">
-<meta property="og:description" content="Barra de tragos y coctelería de autor para cumpleaños, aniversarios, reuniones y fiestas privadas en Uruguay.">
+<meta property="og:title" content="Barra de tragos para cumpleaños y fiestas · Classic Twist">
+<meta property="og:description" content="Barra de tragos y tragos de autor para cumpleaños, aniversarios y fiestas privadas en Montevideo, Canelones y Punta del Este. Con y sin alcohol.">
 <meta property="og:locale" content="es_UY">
 <meta property="og:site_name" content="Classic Twist">
+<meta property="og:image" content="https://classictwist.uy/assets/img/og/og-celebraciones.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trago de autor servido en un cumpleaños">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Barra de tragos para cumpleaños y fiestas",
+  "serviceType": "Coctelería para celebraciones privadas",
+  "description": "Barra de tragos a domicilio, en chacras o en salones, para cumpleaños, fiestas de 15, aniversarios y fiestas privadas. Clásicos o tragos de autor, con y sin alcohol.",
+  "url": "https://classictwist.uy/celebraciones",
+  "image": "https://classictwist.uy/assets/img/og/og-celebraciones.jpg",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Classic Twist",
+    "url": "https://classictwist.uy/",
+    "email": "propuestas@classictwist.uy",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montevideo",
+      "addressCountry": "UY"
+    }
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Montevideo"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Canelones"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Maldonado"
+    },
+    {
+      "@type": "City",
+      "name": "Punta del Este"
+    },
+    {
+      "@type": "City",
+      "name": "José Ignacio"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Formatos",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Experiencia líquida",
+          "description": "Tragos de autor creados a partir de la personalidad del anfitrión, con o sin alcohol."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Estación interactiva",
+          "description": "Los invitados eligen, combinan y completan su propio trago."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Coctelería clásica",
+          "description": "Barra libre con los clásicos más elegidos."
+        }
+      }
+    ]
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap">
@@ -1315,10 +1394,12 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 .panel:hover video, .panel:hover > img { transform: none; filter: none; }
 
 /* Equipo: foto grande del equipo en la barra */
-.duo-pie--foto { padding-bottom: clamp(28px, 3vw, 44px); }
-.equipo-grupo { margin: 0; padding: 0 var(--pad) clamp(80px, 9vw, 130px); }
+/* Equipo: foto del grupo chica con el párrafo al costado */
+.equipo-bloque { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 4vw, 70px); align-items: center; padding: clamp(50px, 6vw, 90px) var(--pad) clamp(80px, 9vw, 130px); }
+.equipo-bloque .duo-pie--foto { padding: 0; margin: 0; max-width: 52ch; }
+.equipo-grupo { margin: 0; padding: 0; }
 .equipo-grupo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
-@media (max-width: 900px) { .equipo-grupo { padding: 0 20px 70px; } }
+@media (max-width: 900px) { .equipo-bloque { grid-template-columns: 1fr; gap: 28px; padding: 50px 20px 70px; } }
 
 </style>
 </head>
@@ -1359,8 +1440,8 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <div class="hero-sub-texto">
     <span class="etiqueta aparece">Celebraciones privadas</span>
     <h1 class="h1 aparece d1" style="--ovalo: var(--verde)">¿Cómo sería <br>tu <span class="ovalo">celebración</span> <br>si se pudiera beber?</h1>
-    <p class="cuerpo aparece d2">Un día especial que refleje tu personalidad y tus invitados agasajados. Diseñamos la barra a la medida del momento, ya sea para 50 o para 200 personas.</p>
-    <div class="hero-indice aparece d3"><a href="#ocasiones">Ocasiones</a><a href="#servicios">Servicios</a><a href="#trabajos">Trabajos</a></div>
+    <p class="cuerpo aparece d2">Un día especial que refleje tu personalidad y tus invitados agasajados. Diseñamos la barra de tragos a la medida del momento, ya sea para 50, 100, 200 personas o más.</p>
+    <div class="hero-indice aparece d3"><a href="#ocasiones">Ocasiones</a><a href="#servicios">Servicios</a></div>
   </div>
   <div class="hero-sub-media"><video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video><span class="media-rotulo">El Nido</span></div>
 </section>
@@ -1371,26 +1452,26 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
   <div class="partido-texto">
     <span class="etiqueta aparece">Ocasiones</span>
     <h2 class="h2 aparece d1" style="--ovalo: var(--verde)">Un recuerdo <br><span class="ovalo">compartido</span></h2>
-    <p class="cuerpo aparece d2">Podemos acompañar con un servicio impecable o diseñar cada detalle, desde el primer trago de bienvenida hasta el último brindis.</p>
+    <p class="cuerpo aparece d2">Barra de tragos para cumpleaños, aniversarios y otras fiestas privadas, a domicilio, en chacras o en salones de Montevideo, Canelones, Punta del Este y José Ignacio. Vos elegís: una barra con los clásicos de siempre o una carta de tragos de autor pensada especialmente para la ocasión (con o sin alcohol).</p>
     <ul class="sublineas aparece d3">
-      <li><b>Cumpleaños</b><span>Un trago que habla de vos en la mano de cada invitado.</span></li>
+      <li><b>Cumpleaños y fiestas de 15</b><span>Cócteles y mocktails (sin alcohol) que hablan de vos en la mano de cada invitado.</span></li>
       <li><b>Aniversarios</b><span>Un recuerdo compartido, servido en una copa.</span></li>
-      <li><b>Reuniones y fiestas</b><span>Coctelería de autor o clásica, con servicio completo.</span></li>
+      <li><b>Reuniones y fiestas</b><span>Fiestas en casa, chacra o salón, con coctelería de autor o clásica.</span></li>
     </ul>
   </div>
   <div class="partido-media pasafotos" data-intervalo="2800">
-    <img src="galeria/casamiento/portada.jpg" alt="Invitadas brindando en una celebración" loading="lazy">
-    <img src="assets/img/celebraciones/DSC00991.jpg" alt="Bartender de Classic Twist de noche" loading="lazy">
-    <img src="galeria/boda/03.jpg" alt="Trago servido en una celebración privada" loading="lazy">
+    <img src="galeria/golf50/02.jpg" alt="Invitada con un trago de autor en un cumpleaños de 50" loading="lazy">
+    <img src="galeria/golf50/06.jpg" alt="Trago azul de autor servido en copa en un cumpleaños" loading="lazy">
+    <img src="galeria/golf50/04.jpg" alt="Bartender terminando un trago con rodaja de naranja deshidratada" loading="lazy">
   </div>
 </section>
 
 <div class="seccion-cabeza t-social" id="servicios">
   <div>
-    <span class="etiqueta aparece">Servicios</span>
-    <h2 class="h2 aparece d1">A la medida <br>de tu celebración</h2>
+    <h2 class="etiqueta aparece">Barra de tragos para cumpleaños y fiestas</h2>
+    <p class="h2 aparece d1">A la medida <br>de tu celebración</p>
   </div>
-  <p class="cuerpo aparece d2">Todas las propuestas incluyen personal (bartenders, asistentes y referente), cristalería, hielo estándar y cristalino, traslados y todo lo necesario para la realización del servicio.</p>
+  <p class="cuerpo aparece d2">Todas las propuestas incluyen personal (bartenders, asistentes y referente), cristalería, hielo, traslados y todo lo necesario para la realización del servicio.</p>
 </div>
 <div class="servicios-grid t-social">
   <article class="servicio-card aparece">
@@ -1400,7 +1481,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     </div>
     <div class="servicio-card-media " data-intervalo="2200"><img src="assets/img/celebraciones/DSC01003.jpg" alt="Bartender sirviendo un trago de autor" loading="lazy"></div>
     <div class="servicio-card-texto">
-      <p class="cuerpo">Tragos creados a partir de tu personalidad y del universo de la celebración, con o sin alcohol.</p>
+      <p class="cuerpo">Tragos de autor creados a partir de tu personalidad y del universo de la celebración, con o sin alcohol.</p>
     </div>
   </article>
 
@@ -1422,7 +1503,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     </div>
     <div class="servicio-card-media " data-intervalo="2200"><img src="assets/img/celebraciones/DSC00960.jpg" alt="Trago clásico servido en barra" loading="lazy"></div>
     <div class="servicio-card-texto">
-      <p class="cuerpo">Open bar con los tragos más reconocidos y elegidos, con servicio completo de principio a fin.</p>
+      <p class="cuerpo">Barra libre con los tragos más reconocidos y elegidos, preparados por bartenders profesionales de principio a fin.</p>
     </div>
   </article>
 
@@ -1434,76 +1515,20 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     <h2 class="h1 aparece d1">Tu celebración en la <span class="ovalo">mano</span> de cada invitado</h2>
     
   </div>
-  <div class="banda-media"><video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video></div>
-</section>
-
-<div class="seccion-cabeza">
-  <div>
-    <span class="etiqueta aparece">En fotos</span>
-    <h2 class="h2 aparece d1">La noche, <br>servida</h2>
-  </div>
-  <p class="cuerpo aparece d2">Bartenders, coctelería de autor y un servicio pensado para que tus invitados la pasen bien de principio a fin. <a href="/evento?e=boda" class="link-flecha" style="margin-top:14px">Ver todas las fotos <span aria-hidden="true">→</span></a></p>
-</div>
-<div class="tira tira--fotos"><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/11.jpg" alt="Casamiento — Classic Twist" loading="lazy"></a><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/12.jpg" alt="Casamiento — Classic Twist" loading="lazy"></a><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/13.jpg" alt="Casamiento — Classic Twist" loading="lazy"></a><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/07.jpg" alt="Casamiento — Classic Twist" loading="lazy"></a><a class="zoom" href="/evento?e=boda"><img src="galeria/boda/08.jpg" alt="Casamiento — Classic Twist" loading="lazy"></a></div>
-
-<div class="seccion-cabeza" id="trabajos">
-  <div>
-    <span class="etiqueta aparece">Trabajos</span>
-    <h2 class="h2 aparece d1">Celebraciones <br>que diseñamos</h2>
-  </div>
-  <p class="cuerpo aparece d2">Fiestas y celebraciones privadas donde la barra fue parte del recuerdo.</p>
-</div>
-<div class="galeria-grid" data-linea="social" data-cantidad="6"></div>
-<div class="galeria-pie">
-  <span class="firma">Dirección creativa aplicada al líquido</span>
-  <a href="/portfolio" class="link-flecha">Ver todo el portfolio <span aria-hidden="true">→</span></a>
-</div>
-
-<section class="conoce" aria-label="Conocé más">
-  <div class="conoce-cabeza">
-    <div>
-      <span class="etiqueta aparece">Conocé más</span>
-      <h2 class="h2 aparece d1">Todo lo que <br>hacemos con el <span class="ovalo">líquido</span></h2>
-    </div>
-    <nav class="conoce-links aparece d2" aria-label="Más de Classic Twist">
-      <a href="/">Inicio <span aria-hidden="true">→</span></a>
-      <a href="/portfolio">Portfolio <span aria-hidden="true">→</span></a>
-      <a href="/equipo">Equipo <span aria-hidden="true">→</span></a>
-    </nav>
-  </div>
-  <nav class="servicios-tres" aria-label="Otros servicios">
-  <a class="servicio-link" href="/eventos-corporativos">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/hym-v2.jpg" src="videos/hym-v2.mp4"></video>
-    <span class="servicio-link-num">01</span>
-    <div><div class="servicio-link-nombre">Eventos corporativos</div></div>
-    <div class="servicio-link-pie"><span>Lanzamientos, activaciones, eventos de marca y fiestas de fin de año.</span><span aria-hidden="true">→</span></div>
-  </a>
-  <a class="servicio-link" href="/casamientos">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento.jpg" src="videos/casamiento.mp4"></video>
-    <span class="servicio-link-num">02</span>
-    <div><div class="servicio-link-nombre">Casamientos</div></div>
-    <div class="servicio-link-pie"><span>Tragos únicos como su historia de amor.</span><span aria-hidden="true">→</span></div>
-  </a>
-  <a class="servicio-link" href="/">
-    <img src="galeria/hym2026/01.jpg" alt="" loading="lazy">
-    <span class="servicio-link-num">Classic Twist</span>
-    <div><div class="servicio-link-nombre">Conocé el estudio</div></div>
-    <div class="servicio-link-pie"><span>Quiénes somos, nuestros servicios y trabajos.</span><span aria-hidden="true">→</span></div>
-  </a>
-  </nav>
+  <div class="banda-media"><video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/golf-2.jpg" src="videos/golf-2.mp4"></video></div>
 </section>
 
 <section class="contacto-split" id="contacto">
   <div class="ct-izq">
     <span class="etiqueta aparece">Hablemos</span>
-    <h2 class="h2 aparece d1">Tu próximo evento <br>empieza con <br>una <span class="ovalo">idea.</span></h2>
+    <h2 class="h2 aparece d1">Tu celebración <br>empieza con <br>una <span class="ovalo">idea.</span></h2>
     <p class="ct-sub aparece d2">Contanos qué estás planeando. Nos encantaría crearlo con vos.</p>
     <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn aparece d3">Escribinos <span aria-hidden="true">→</span></a>
   </div>
   <div class="ct-der">
     <div class="ct-item aparece"><span class="etiqueta">Mail</span><a class="ct-valor" href="mailto:propuestas@classictwist.uy">propuestas@classictwist.uy</a></div>
     <div class="ct-item aparece d1"><span class="etiqueta">Instagram</span><a class="ct-valor" href="https://www.instagram.com/classictwist.uy/" target="_blank" rel="noopener">@classictwist.uy</a></div>
-    <div class="ct-item aparece d3"><span class="etiqueta">Ubicación</span><span class="ct-valor">Montevideo, Uruguay</span></div>
+    <div class="ct-item aparece d3"><span class="etiqueta">Dónde trabajamos</span><span class="ct-valor">Montevideo, Canelones y Maldonado (Punta del Este y José Ignacio)</span></div>
   </div>
 </section>
 

@@ -1352,10 +1352,12 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
 .panel:hover video, .panel:hover > img { transform: none; filter: none; }
 
 /* Equipo: foto grande del equipo en la barra */
-.duo-pie--foto { padding-bottom: clamp(28px, 3vw, 44px); }
-.equipo-grupo { margin: 0; padding: 0 var(--pad) clamp(80px, 9vw, 130px); }
+/* Equipo: foto del grupo chica con el párrafo al costado */
+.equipo-bloque { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 4vw, 70px); align-items: center; padding: clamp(50px, 6vw, 90px) var(--pad) clamp(80px, 9vw, 130px); }
+.equipo-bloque .duo-pie--foto { padding: 0; margin: 0; max-width: 52ch; }
+.equipo-grupo { margin: 0; padding: 0; }
 .equipo-grupo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
-@media (max-width: 900px) { .equipo-grupo { padding: 0 20px 70px; } }
+@media (max-width: 900px) { .equipo-bloque { grid-template-columns: 1fr; gap: 28px; padding: 50px 20px 70px; } }
 
 </style>
 </head>
@@ -1398,7 +1400,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/hym-v2.jpg" src="videos/hym-v2.mp4"></video>
   </div>
   <div class="panel">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento.jpg" src="videos/casamiento.mp4"></video>
+    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento-1.jpg" src="videos/casamiento-1.mp4"></video>
   </div>
   <div class="panel">
     <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video>
@@ -1423,7 +1425,7 @@ body.t-oscuro { background: var(--negro); color: var(--beige); --acento: var(--v
     <div class="servicio-link-pie"><span>Lanzamientos, activaciones, eventos de marca y fiestas de fin de año.</span><span aria-hidden="true">→</span></div>
   </a>
   <a class="servicio-link" href="/casamientos">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento.jpg" src="videos/casamiento.mp4"></video>
+    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento-2.jpg" src="videos/casamiento-2.mp4"></video>
     <span class="servicio-link-num">02</span>
     <div><h3 class="servicio-link-nombre">Casamientos</h3></div>
     <div class="servicio-link-pie"><span>Tragos únicos como su historia de amor.</span><span aria-hidden="true">→</span></div>
