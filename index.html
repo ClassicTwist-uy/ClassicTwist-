@@ -1386,7 +1386,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="/celebraciones">Celebraciones</a></li>
       <li><a href="/portfolio">Portfolio</a></li>
       <li><a href="/equipo">Equipo</a></li>
-      <li><a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="nav-cta">Contacto</a></li>
+      <li><a href="/contacto" class="nav-cta">Contacto</a></li>
     </ul>
   </nav>
   <button class="ham" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -1399,7 +1399,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="/celebraciones">Celebraciones</a>
   <a href="/portfolio">Portfolio</a>
   <a href="/equipo">Nuestro equipo</a>
-  <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn">Contacto</a>
+  <a href="/contacto" class="btn">Contacto</a>
   <p class="firma">Dirección creativa aplicada al líquido</p>
 </div>
 
@@ -1408,13 +1408,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ══════════ TRES VIDEOS — UNO POR LÍNEA ══════════ -->
 <section class="triptico" aria-label="Classic Twist">
   <div class="panel">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/hym-v2.jpg" src="videos/hym-v2.mp4"></video>
+    <video data-auto muted playsinline loop preload="none" poster="videos/portadas/hym-v2.jpg" src="videos/hym-v2.mp4"></video>
   </div>
   <div class="panel">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento-1.jpg" src="videos/casamiento-1.mp4"></video>
+    <video data-auto muted playsinline loop preload="none" poster="videos/portadas/casamiento-1.jpg" src="videos/casamiento-1.mp4"></video>
   </div>
   <div class="panel">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video>
+    <video data-auto muted playsinline loop preload="none" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video>
   </div>
   <h1 class="triptico-logo"><img src="assets/logo/logo_bajada_beige.svg" alt="Classic Twist — Dirección creativa aplicada al líquido"></h1>
   <span class="scroll-aviso" aria-hidden="true"></span>
@@ -1430,19 +1430,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div style="text-align:center;padding-bottom:28px"><h2 class="etiqueta aparece acento-coral">Barra de tragos para eventos</h2></div>
 <nav class="servicios-tres" aria-label="Nuestros servicios">
   <a class="servicio-link" href="/eventos-corporativos">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/hym-v2.jpg" src="videos/hym-v2.mp4"></video>
+    <video data-auto muted playsinline loop preload="none" poster="videos/portadas/hym-v2.jpg" src="videos/hym-v2.mp4"></video>
     <span class="servicio-link-num">01</span>
     <div><h3 class="servicio-link-nombre">Eventos corporativos</h3></div>
     <div class="servicio-link-pie"><span>Lanzamientos, activaciones, eventos de marca y fiestas de fin de año.</span><span aria-hidden="true">→</span></div>
   </a>
   <a class="servicio-link" href="/casamientos">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/casamiento-2.jpg" src="videos/casamiento-2.mp4"></video>
+    <video data-auto muted playsinline loop preload="none" poster="videos/portadas/casamiento-2.jpg" src="videos/casamiento-2.mp4"></video>
     <span class="servicio-link-num">02</span>
     <div><h3 class="servicio-link-nombre">Casamientos</h3></div>
     <div class="servicio-link-pie"><span>Tragos únicos como su historia de amor.</span><span aria-hidden="true">→</span></div>
   </a>
   <a class="servicio-link" href="/celebraciones">
-    <video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video>
+    <video data-auto muted playsinline loop preload="none" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video>
     <span class="servicio-link-num">03</span>
     <div><h3 class="servicio-link-nombre">Celebraciones privadas</h3></div>
     <div class="servicio-link-pie"><span>Cumpleaños, aniversarios, reuniones y fiestas.</span><span aria-hidden="true">→</span></div>
@@ -1476,7 +1476,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="etiqueta aparece">Hablemos</span>
     <h2 class="h2 aparece d1">Tu próximo evento <br>empieza con <br>una <span class="ovalo">idea.</span></h2>
     <p class="ct-sub aparece d2">Contanos qué estás planeando. Nos encantaría crearlo con vos.</p>
-    <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn aparece d3">Escribinos <span aria-hidden="true">→</span></a>
+    <a href="/contacto" class="btn aparece d3">Escribinos <span aria-hidden="true">→</span></a>
   </div>
   <div class="ct-der">
     <div class="ct-item aparece"><span class="etiqueta">Mail</span><a class="ct-valor" href="mailto:propuestas@classictwist.uy">propuestas@classictwist.uy</a></div>
@@ -1620,7 +1620,7 @@ function tarjetaTrabajo(t) {
   a.dataset.linea = t.linea;
   a.innerHTML = `
     ${t.video
-      ? `<video autoplay muted loop playsinline preload="metadata" poster="videos/portadas/${t.video}.jpg" src="videos/${t.video}.mp4" aria-label="${t.nombre} — Classic Twist"></video>`
+      ? `<video data-auto muted loop playsinline preload="none" poster="videos/portadas/${t.video}.jpg" src="videos/${t.video}.mp4" aria-label="${t.nombre} — Classic Twist"></video>`
       : `<img src="galeria/${t.id}/${t.portada || 'portada'}.jpg" alt="${t.nombre} — Classic Twist" loading="lazy">`}
     <div class="trabajo-info">
       <span class="trabajo-nombre">${t.nombre}</span>
@@ -1632,7 +1632,7 @@ function tarjetaTrabajo(t) {
 /* ── Óvalo del menú (igual que en la web anterior, en ocre) ──
    Links: se dibuja al pasar el mouse.
    Contacto (.nav-cta): siempre dibujado; se borra mientras el mouse está en otro link. */
-const HUBSPOT = 'https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ';
+const HUBSPOT = '/contacto';
 function ovalosMenu() {
   const ns = 'http://www.w3.org/2000/svg';
   const items = Array.from(document.querySelectorAll('.nav-links li'));
@@ -1698,6 +1698,26 @@ document.querySelectorAll('.equipo-num').forEach(n => {
     clearTimeout(quieto);
     quieto = setTimeout(() => nav.classList.remove('moviendo'), 260);
   }, { passive: true });
+})();
+
+/* ── Videos: se cargan y reproducen solo cuando están en pantalla (ahorra datos, misma calidad) ── */
+(() => {
+  const vistos = new WeakSet();
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(entradas => {
+    entradas.forEach(({ target: v, isIntersecting }) => {
+      if (isIntersecting) { v.play().catch(() => {}); } else if (!v.paused) { v.pause(); }
+    });
+  }, { rootMargin: '200px 0px' }) : null;
+  const activar = raiz => (raiz.querySelectorAll ? raiz : document).querySelectorAll('video[data-auto]').forEach(v => {
+    if (vistos.has(v)) return;
+    vistos.add(v); v.muted = true;
+    io ? io.observe(v) : v.play().catch(() => {});
+  });
+  activar(document);
+  new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => {
+    if (n.nodeType !== 1) return;
+    if (n.matches('video[data-auto]')) activar(n.parentNode); else activar(n);
+  }))).observe(document.documentElement, { childList: true, subtree: true });
 })();
 
 /* ── Vista local (abriendo los archivos en la compu): los enlaces "/pagina" llevan a "pagina.html" ── */

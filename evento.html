@@ -1342,7 +1342,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="/celebraciones">Celebraciones</a></li>
       <li><a href="/portfolio" class="activo">Portfolio</a></li>
       <li><a href="/equipo">Equipo</a></li>
-      <li><a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="nav-cta">Contacto</a></li>
+      <li><a href="/contacto" class="nav-cta">Contacto</a></li>
     </ul>
   </nav>
   <button class="ham" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -1355,7 +1355,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="/celebraciones">Celebraciones</a>
   <a href="/portfolio">Portfolio</a>
   <a href="/equipo">Nuestro equipo</a>
-  <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn">Contacto</a>
+  <a href="/contacto" class="btn">Contacto</a>
   <p class="firma">Dirección creativa aplicada al líquido</p>
 </div>
 
@@ -1386,7 +1386,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="firma">Siguiente trabajo</span>
       <h2 class="h3" style="margin-top:8px"><a id="siguiente" href="#" style="text-decoration:none"></a></h2>
     </div>
-    <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn btn--lleno">Diseñemos el tuyo <span aria-hidden="true">→</span></a>
+    <a href="/contacto" class="btn btn--lleno">Diseñemos el tuyo <span aria-hidden="true">→</span></a>
   </section>
 </main>
 
@@ -1536,7 +1536,7 @@ function tarjetaTrabajo(t) {
   a.dataset.linea = t.linea;
   a.innerHTML = `
     ${t.video
-      ? `<video autoplay muted loop playsinline preload="metadata" poster="videos/portadas/${t.video}.jpg" src="videos/${t.video}.mp4" aria-label="${t.nombre} — Classic Twist"></video>`
+      ? `<video data-auto muted loop playsinline preload="none" poster="videos/portadas/${t.video}.jpg" src="videos/${t.video}.mp4" aria-label="${t.nombre} — Classic Twist"></video>`
       : `<img src="galeria/${t.id}/${t.portada || 'portada'}.jpg" alt="${t.nombre} — Classic Twist" loading="lazy">`}
     <div class="trabajo-info">
       <span class="trabajo-nombre">${t.nombre}</span>
@@ -1548,7 +1548,7 @@ function tarjetaTrabajo(t) {
 /* ── Óvalo del menú (igual que en la web anterior, en ocre) ──
    Links: se dibuja al pasar el mouse.
    Contacto (.nav-cta): siempre dibujado; se borra mientras el mouse está en otro link. */
-const HUBSPOT = 'https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ';
+const HUBSPOT = '/contacto';
 function ovalosMenu() {
   const ns = 'http://www.w3.org/2000/svg';
   const items = Array.from(document.querySelectorAll('.nav-links li'));
@@ -1616,6 +1616,26 @@ document.querySelectorAll('.equipo-num').forEach(n => {
   }, { passive: true });
 })();
 
+/* ── Videos: se cargan y reproducen solo cuando están en pantalla (ahorra datos, misma calidad) ── */
+(() => {
+  const vistos = new WeakSet();
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(entradas => {
+    entradas.forEach(({ target: v, isIntersecting }) => {
+      if (isIntersecting) { v.play().catch(() => {}); } else if (!v.paused) { v.pause(); }
+    });
+  }, { rootMargin: '200px 0px' }) : null;
+  const activar = raiz => (raiz.querySelectorAll ? raiz : document).querySelectorAll('video[data-auto]').forEach(v => {
+    if (vistos.has(v)) return;
+    vistos.add(v); v.muted = true;
+    io ? io.observe(v) : v.play().catch(() => {});
+  });
+  activar(document);
+  new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => {
+    if (n.nodeType !== 1) return;
+    if (n.matches('video[data-auto]')) activar(n.parentNode); else activar(n);
+  }))).observe(document.documentElement, { childList: true, subtree: true });
+})();
+
 /* ── Vista local (abriendo los archivos en la compu): los enlaces "/pagina" llevan a "pagina.html" ── */
 if (location.protocol === 'file:') {
   document.addEventListener('click', e => {
@@ -1650,7 +1670,8 @@ if (location.protocol === 'file:') {
   img.alt = `${t.nombre} — Classic Twist`;
   if (t.video) {
     const v = document.createElement('video');
-    Object.assign(v, { autoplay: true, muted: true, loop: true, playsInline: true, poster: `videos/portadas/${t.video}.jpg`, src: `videos/${t.video}.mp4` });
+    v.dataset.auto = ''; v.preload = 'none';
+    Object.assign(v, { muted: true, loop: true, playsInline: true, poster: `videos/portadas/${t.video}.jpg`, src: `videos/${t.video}.mp4` });
     img.replaceWith(v);
   }
   document.getElementById('ev-num').textContent = String(t.fotos).padStart(2, '0');
@@ -1684,7 +1705,7 @@ if (location.protocol === 'file:') {
   (t.videos || []).forEach((v, k) => {
     const d = document.createElement('div');
     d.className = 'foto foto--video';
-    d.innerHTML = `<video autoplay muted loop playsinline preload="metadata" poster="videos/portadas/${v}.jpg" src="videos/${v}.mp4"></video>`;
+    d.innerHTML = `<video data-auto muted loop playsinline preload="none" poster="videos/portadas/${v}.jpg" src="videos/${v}.mp4"></video>`;
     mosaico.insertBefore(d, mosaico.children[1 + k * 3] || null);
   });
 

@@ -1428,7 +1428,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="/celebraciones" class="activo">Celebraciones</a></li>
       <li><a href="/portfolio">Portfolio</a></li>
       <li><a href="/equipo">Equipo</a></li>
-      <li><a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="nav-cta">Contacto</a></li>
+      <li><a href="/contacto" class="nav-cta">Contacto</a></li>
     </ul>
   </nav>
   <button class="ham" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -1441,7 +1441,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="/celebraciones">Celebraciones</a>
   <a href="/portfolio">Portfolio</a>
   <a href="/equipo">Nuestro equipo</a>
-  <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn">Contacto</a>
+  <a href="/contacto" class="btn">Contacto</a>
   <p class="firma">Dirección creativa aplicada al líquido</p>
 </div>
 
@@ -1454,7 +1454,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="cuerpo aparece d2">Un día especial que refleje tu personalidad y tus invitados agasajados. Diseñamos la barra de tragos a la medida del momento, ya sea para 50, 100, 200 personas o más.</p>
     <div class="hero-indice aparece d3"><a href="#ocasiones">Ocasiones</a><a href="#servicios">Servicios</a></div>
   </div>
-  <div class="hero-sub-media"><video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video><span class="media-rotulo">El Nido</span></div>
+  <div class="hero-sub-media"><video data-auto muted playsinline loop preload="none" poster="videos/portadas/el-nido.jpg" src="videos/el-nido.mp4"></video><span class="media-rotulo">El Nido</span></div>
 </section>
 
 <div class="t-social"><div class="cinta" aria-hidden="true"><div class="cinta-in"><span>Cumpleaños</span><span>Aniversarios</span><span>Reuniones</span><span>Fiestas</span><span>Tragos de autor</span><span>Con o sin alcohol</span><span>Cumpleaños</span><span>Aniversarios</span><span>Reuniones</span><span>Fiestas</span><span>Tragos de autor</span><span>Con o sin alcohol</span></div></div>
@@ -1526,7 +1526,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="h1 aparece d1">Tu celebración en la <span class="ovalo">mano</span> de cada invitado</h2>
     
   </div>
-  <div class="banda-media"><video autoplay muted playsinline loop preload="metadata" poster="videos/portadas/golf-2.jpg" src="videos/golf-2.mp4"></video></div>
+  <div class="banda-media"><video data-auto muted playsinline loop preload="none" poster="videos/portadas/golf-2.jpg" src="videos/golf-2.mp4"></video></div>
 </section>
 
 <section class="contacto-split" id="contacto">
@@ -1534,7 +1534,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="etiqueta aparece">Hablemos</span>
     <h2 class="h2 aparece d1">Tu celebración <br>empieza con <br>una <span class="ovalo">idea.</span></h2>
     <p class="ct-sub aparece d2">Contanos qué estás planeando. Nos encantaría crearlo con vos.</p>
-    <a href="https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ" target="_blank" rel="noopener" class="btn aparece d3">Escribinos <span aria-hidden="true">→</span></a>
+    <a href="/contacto" class="btn aparece d3">Escribinos <span aria-hidden="true">→</span></a>
   </div>
   <div class="ct-der">
     <div class="ct-item aparece"><span class="etiqueta">Mail</span><a class="ct-valor" href="mailto:propuestas@classictwist.uy">propuestas@classictwist.uy</a></div>
@@ -1678,7 +1678,7 @@ function tarjetaTrabajo(t) {
   a.dataset.linea = t.linea;
   a.innerHTML = `
     ${t.video
-      ? `<video autoplay muted loop playsinline preload="metadata" poster="videos/portadas/${t.video}.jpg" src="videos/${t.video}.mp4" aria-label="${t.nombre} — Classic Twist"></video>`
+      ? `<video data-auto muted loop playsinline preload="none" poster="videos/portadas/${t.video}.jpg" src="videos/${t.video}.mp4" aria-label="${t.nombre} — Classic Twist"></video>`
       : `<img src="galeria/${t.id}/${t.portada || 'portada'}.jpg" alt="${t.nombre} — Classic Twist" loading="lazy">`}
     <div class="trabajo-info">
       <span class="trabajo-nombre">${t.nombre}</span>
@@ -1690,7 +1690,7 @@ function tarjetaTrabajo(t) {
 /* ── Óvalo del menú (igual que en la web anterior, en ocre) ──
    Links: se dibuja al pasar el mouse.
    Contacto (.nav-cta): siempre dibujado; se borra mientras el mouse está en otro link. */
-const HUBSPOT = 'https://u5kjy.share.hsforms.com/244sGq6KZTMa5v41N2JdcyQ';
+const HUBSPOT = '/contacto';
 function ovalosMenu() {
   const ns = 'http://www.w3.org/2000/svg';
   const items = Array.from(document.querySelectorAll('.nav-links li'));
@@ -1756,6 +1756,26 @@ document.querySelectorAll('.equipo-num').forEach(n => {
     clearTimeout(quieto);
     quieto = setTimeout(() => nav.classList.remove('moviendo'), 260);
   }, { passive: true });
+})();
+
+/* ── Videos: se cargan y reproducen solo cuando están en pantalla (ahorra datos, misma calidad) ── */
+(() => {
+  const vistos = new WeakSet();
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(entradas => {
+    entradas.forEach(({ target: v, isIntersecting }) => {
+      if (isIntersecting) { v.play().catch(() => {}); } else if (!v.paused) { v.pause(); }
+    });
+  }, { rootMargin: '200px 0px' }) : null;
+  const activar = raiz => (raiz.querySelectorAll ? raiz : document).querySelectorAll('video[data-auto]').forEach(v => {
+    if (vistos.has(v)) return;
+    vistos.add(v); v.muted = true;
+    io ? io.observe(v) : v.play().catch(() => {});
+  });
+  activar(document);
+  new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => {
+    if (n.nodeType !== 1) return;
+    if (n.matches('video[data-auto]')) activar(n.parentNode); else activar(n);
+  }))).observe(document.documentElement, { childList: true, subtree: true });
 })();
 
 /* ── Vista local (abriendo los archivos en la compu): los enlaces "/pagina" llevan a "pagina.html" ── */
